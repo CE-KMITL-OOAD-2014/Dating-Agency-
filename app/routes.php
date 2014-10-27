@@ -10,41 +10,52 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-
 Route::post('/login', function(){
   $credentials = Input::only('username', 'password');
   if(Auth::attempt($credentials)){
-    return Redirect::to('/showprofile');
+    return Redirect::to('showprofile');
   }
-  return Redirect::to('/register');
+  return Redirect::to('register');
 });
 
-Route::get('/logout', function(){
+Route::get('logout', function(){
     Auth::logout();
-    return Redirect::to('/register');
+    return Redirect::to('register');
 });
 
-Route::get('/register',function(){
-	return View::make('/register');
+Route::get('register',function(){
+	return View::make('register');
 });
 
-Route::post('/register','AuthController@register');
+Route::post('register','AuthController@register');
 
-Route::get('/buildprofile',function(){
-	return View::make('/buildprofile');
+Route::get('buildprofile',function(){
+	return View::make('buildprofile');
 });
 
-Route::post('/buildprofile','AuthController@register');
+Route::post('buildprofile','AuthController@register');
 
-Route::get('/showprofile', function(){
-	// $username = "";
-	// if(isset(Auth::user()->username)){
-	// 	$username = Auth::user()->username;
-	return View::make('/showprofile', array('user' => Auth::user()));
+Route::get('showprofile', function(){
+	$username = "";
+	if(isset(Auth::user()->username)){
+		$username = Auth::user()->username;
+}
+	return View::make('showprofile', array('user' => Auth::user()));
 
 });
 
-Route::post('/showprofile','AuthController@register');
+
+Route::post('showprofile','AuthController@profile');
+
+Route::get('profile',function(){
+	$username = "";
+	if(isset(Auth::user()->username)){
+		$username = Auth::user()->username;
+}
+	return View::make('profile', array('user' => Auth::user()));
+
+});
+
 //Route::post('/buildprofile','AuthController@buildprofile');
 
 
@@ -67,8 +78,8 @@ Route::post('/showprofile','AuthController@register');
 //     return Redirect::to('/showprofile');
 // });
 
-Route::get('/editprofile',function(){
-	return View::make('/editprofile', array('user' => Auth::user()));
+Route::get('editprofile',function(){
+	return View::make('editprofile', array('user' => Auth::user()));
 });
 
-// ?>
+ ?>

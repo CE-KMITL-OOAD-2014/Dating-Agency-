@@ -40,9 +40,14 @@ class AuthController extends BaseController {
         $credentials = Input::only('username', 'password');
         if(Auth::attempt($credentials)){
         return Redirect::to('/showprofile');
+   		 }  	
     }
-        	
+
+      public function profile(){  
+    	   
+       		 return View::make('/profile');  	
     }
+
 }    
 ?>
 		
