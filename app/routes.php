@@ -23,6 +23,14 @@ Route::get('logout', function(){
     return Redirect::to('register');
 });
 
+Route::post('/login', function(){
+  $credentials = Input::only('username', 'password');
+  if(Auth::attempt($credentials)){
+    return Redirect::to('showprofile');
+  }
+  return Redirect::to('register');
+});
+
 Route::get('register',function(){
 	return View::make('register');
 });

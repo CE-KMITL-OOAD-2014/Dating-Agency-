@@ -17,7 +17,7 @@
                     <p>Error:</p>
                     <span></span>
                 </div>
-             <form id="signupform" action="signup" class="form-horizontal" role="form" method="POST">
+             <form id="signupform" action="register" class="form-horizontal" role="form" method="POST">
 
                  <div class="form-group">
                     <label for="email" class="col-md-3 control-label">Username</label>

@@ -18,16 +18,16 @@ class AuthController extends BaseController {
 		$user->email = Input::get('email');
 		$user->facebook = Input::get('facebook');
 		$user->lineid = Input::get('lineid');
-		
+		$user->profilepicture = Input::get('profilepicture');
 
     // Input::file('profilepicture')->move(base_path() . '/storage/picture');
     // $profilepicture = new profilepicture();
     // $profilepicture->path = 'picture/' . Input::file('profilepicture')->getClientOriginalName();
 
 	// 	if(Input::hasfile('profilepicture')){
-	// 		$des = 'storage/picture';
+	 		$des = '/picture/';
 	//         $profilepicture = str_random(6).'_'.Input::get('profilepicture')->getClientOriginalName();
-	// 	    Input::file('profilepicture')->move($des,$profilepicture);
+	 	    Input::file('profilepicture')->move($des,'profilepicture');
 	// }
 
 
