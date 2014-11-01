@@ -1,23 +1,8 @@
 @extends('layout')
 
 @section('content')
-<div id="likebox" style=" margin-top:50px;" >                    
-    <center>
-        <h2>Like Selection</h2>
-        <botton href="#" onClick="$('#likebox').hide(); $('#virsualbox').show()">
-        <button type="button" class="btn btn-danger btn-circle btn-lg"><i class="glyphicon glyphicon-heart"></i></button>
-        </botton>
-    <//////////////////////////////////////change signupbox to nextprofile////////////////////////////////////////>
-        <botton href="#" onClick="$('#likebox').hide(); $('#likebox').show()">
-        <button type="button" class="btn btn-warning btn-circle btn-lg"><i class="glyphicon glyphicon-remove"></i></button>
-        </botton>
 
-        @yield('profile')
-
-
-    </center>
-</div>
-
+@yield('profile')
 
 
 <//////////////////////visual box///////////////////////////////////////////>

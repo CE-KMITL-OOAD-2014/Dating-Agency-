@@ -5,13 +5,14 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateUser extends Migration {
 
-	/**
-	 * Run the migrations.
-	 *
-	 * @return void
-	 */
-	public function up(){
-		Schema::create('users', function($table){
+      /**
+       * Run the migrations.
+       *
+       * @return void
+       */
+      public function up()
+      {
+            Schema::create('users', function($table){
             $table->increments('id');
             $table->string('username', 30)->unique()->nullable(false);
             $table->string('password', 65)->nullable(false);
@@ -25,19 +26,21 @@ class CreateUser extends Migration {
             $table->string('email', 25)->unique()->nullable(false);
             $table->string('facebook', 60)->unique()->nullable(false);
             $table->string('lineid', 30)->unique()->nullable(false); 
-            $table->string('profilepicture',100);
+            $table->string('profilepicture',100)->nullable(true);
             $table->string('remember_token', 100)->nullable();
+
             $table->timestamps();
          });
-	}
+      }
 
-	/**
-	 * Reverse the migrations.
-	 *
-	 * @return void
-	 */
-	public function down(){
-		Schema::drop('users');
-	}
+      /**
+       * Reverse the migrations.
+       *
+       * @return void
+       */
+      public function down()
+      {
+            Schema::drop('users');
+      }
 
 }

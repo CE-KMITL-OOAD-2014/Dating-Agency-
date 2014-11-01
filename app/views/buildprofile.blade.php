@@ -11,14 +11,13 @@
         </div>  
         <div class="panel-body" >
                 {{ Form::open(array('to' => 'register', 'class' => 'form-horizontal',
-                'id' => 'signup-form', 'role' => 'form'))}}
+                'id' => 'signup-form', 'role' => 'form', 'files' => true))}}
 
                 <div id="signupalert" style="display:none" class="alert alert-danger">
                     <p>Error:</p>
                     <span></span>
                 </div>
-             <form id="signupform" action="register" class="form-horizontal" role="form" method="POST">
-
+             <form id="loginform" action="login" class="form-horizontal" role="form" method="POST">
                  <div class="form-group">
                     <label for="email" class="col-md-3 control-label">Username</label>
                     <div class="col-md-9">
@@ -105,13 +104,10 @@
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="profilepicture" class="col-md-3 control-label">ProfilePicture</label>
-                    <div class="col-md-9">
-                        <input type="file" name="profilepicture">
-                    </div>
-                </div> 
+                        
+               Please choose a file: <input type="file" name="profilepicture"><br>
                 
+
                 <div class="form-group">                                       
                     <div class="col-md-offset-3 col-md-9">
                         <button id="btn-signup" type="submit" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Sign Up</button>

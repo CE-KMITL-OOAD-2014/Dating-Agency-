@@ -54,37 +54,29 @@ Route::get('showprofile', function(){
 
 
 Route::post('showprofile','AuthController@profile');
-
+/*
 Route::get('profile',function(){
-	$username = "";
-	if(isset(Auth::user()->username)){
-		$username = Auth::user()->username;
-}
-	return View::make('profile', array('user' => Auth::user()));
 
-});
+//  return View::make('profile',array('user' =>Auth::user()));
+
+});*/
+Route::get('profile',array(
+    'as'=>'profile-Auth::user()',
+    'uses'=>'ProfileController@users'
+  ));
+
+
+Route::get('profile/{username}',array(
+    'as'=>'profile-user',
+    'uses'=>'ProfileController@user'
+  ));
+
+
+//Route::post('profile','AuthController@profile');
+//Route::post('like','ProfileController@user');
 
 //Route::post('/buildprofile','AuthController@buildprofile');
 
-
-// Route::post('form-submit', function(){
-//  return Input::file('profilepicture')->getClientOriginalExtension();
-// });
-
-// Route::post('form-submit', function(){
-//  return Input::file('profilefile')->move(__DIR__.'/storage/',Input::file('profilepicture')->getClientOriginalName());
-// });
-// Route::get('/uploadphoto',function(){
-// 	return View::make('/uploadphoto');
-// });
-
-// Route::post('/uploadphoto','PhotoController@uploadphoto');
-
-
-// Route::get('/save', function(){
-//     Auth::save();
-//     return Redirect::to('/showprofile');
-// });
 
 Route::get('editprofile',function(){
 	return View::make('editprofile', array('user' => Auth::user()));

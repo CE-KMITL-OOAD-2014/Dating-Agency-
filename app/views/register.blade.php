@@ -26,7 +26,6 @@
                         </div>
 
 
-
                         <div class="input-group">
                           <div class="checkbox">
                             <label>
