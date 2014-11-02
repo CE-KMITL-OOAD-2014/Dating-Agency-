@@ -18,31 +18,25 @@ class AuthController extends BaseController {
 		$user->email = Input::get('email');
 		$user->facebook = Input::get('facebook');
 		$user->lineid = Input::get('lineid');
-		
-
-    // Input::file('profilepicture')->move(base_path() . '/storage/picture');
-    // $profilepicture = new profilepicture();
-    // $profilepicture->path = 'picture/' . Input::file('profilepicture')->getClientOriginalName();
-
-	// 	if(Input::hasfile('profilepicture')){
-	// 		$des = 'storage/picture';
-	//         $profilepicture = str_random(6).'_'.Input::get('profilepicture')->getClientOriginalName();
-	// 	    Input::file('profilepicture')->move($des,$profilepicture);
-	// }
-
-
-		// var_dump(Input::file('profilepicture'));
-		// $profilepicture = Input::file('profilepicture');
-		// $filename = $profilepicture->getClientOriginalName();
-  //       $user->profilepicture = $filename;
- //       $user->saveflag = $user->save();
+        $user->profilepicture = Input::file('profilepicture')->getClientOriginalName();
+        Input::file('profilepicture')->move('picture', $user->profilepicture);
 	    $user->save();
+	    
+	    $like = new Like;
+ 	    $like->user()->associate($user);
+  		$like->save();
+
         $credentials = Input::only('username', 'password');
         if(Auth::attempt($credentials)){
         return Redirect::to('/showprofile');
+   		 }  	
     }
-        	
+
+      public function profile(){  
+    	   
+       		 return Redirect::make('/profile');  	
     }
+
 }    
 ?>
 		

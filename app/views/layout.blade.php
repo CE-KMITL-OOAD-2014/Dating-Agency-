@@ -1,5 +1,5 @@
 <html>
-<title>Test Something</title>
+<title>Dating-Agency</title>
 <head>
 	{{ HTML:: style('bootstrap-3.2.0-dist/css/bootstrap.css')}}
 	{{ HTML:: script('bootstrap-3.2.0-dist/js/jquery-1.11.1.min.js')}}
