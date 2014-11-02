@@ -31,7 +31,10 @@ class CreateUser extends Migration {
 
             $table->timestamps();
          });
+<<<<<<< HEAD
            
+=======
+>>>>>>> origin/master
       }
 
       /**
@@ -42,7 +45,10 @@ class CreateUser extends Migration {
       public function down()
       {
             Schema::drop('users');
+<<<<<<< HEAD
            
+=======
+>>>>>>> origin/master
       }
 
 }

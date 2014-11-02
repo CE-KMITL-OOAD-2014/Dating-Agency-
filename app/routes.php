@@ -18,7 +18,7 @@ Route::post('/login', function(){
   return Redirect::to('register');
 });
 
-Route::get('/logout', function(){
+Route::get('logout', function(){
     Auth::logout();
     return Redirect::to('register');
 });
@@ -82,10 +82,13 @@ Route::get('editprofile',function(){
 	return View::make('editprofile', array('user' => Auth::user()));
 });
 
+<<<<<<< HEAD
 //*****************new******************
 Route::get('profile/{username}/like',array(
     'as'=>'profile-user-like',
     'uses'=>'ProfileController@like'
   ));
 //--------------------------------------*/
+=======
+>>>>>>> origin/master
  ?>

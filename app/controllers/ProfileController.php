@@ -16,6 +16,7 @@ class ProfileController extends BaseController {
  
 			return View::make('profile')
 				->with('users',User::all());
+<<<<<<< HEAD
  		}
 
 
@@ -29,6 +30,8 @@ public function like($username){
 		return App::abort(404);
     }
 
+=======
+>>>>>>> origin/master
 
 
       	/*
@@ -40,7 +43,12 @@ public function like($username){
 		return App::abort(404);*/
     	// return View::make('profile');
 		//Redirect::to('/profile/{$user->username}');
+<<<<<<< HEAD
    
+=======
+    }
+
+>>>>>>> origin/master
 
 }
 ?>
