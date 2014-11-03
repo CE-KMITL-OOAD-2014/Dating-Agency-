@@ -5,6 +5,7 @@
  {{$user->username}} <h7>like</h7>
   {{$user_like->username}} <h7>success</h7>
  
+<<<<<<< HEAD
 </center>
 
 <form action = "SendVirtualItem" method = "get">
@@ -12,3 +13,6 @@
                                 <a type="button"  href="edit.html" class="btn btn-primary">SendVirtualItem</a>
                                 </div>
                             </form>
+=======
+</center>
+>>>>>>> origin/master

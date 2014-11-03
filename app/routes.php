@@ -82,12 +82,19 @@ Route::get('/editprofile',function(){
 	return View::make('editprofile', array('user' => Auth::user()));
 });
 
+<<<<<<< HEAD
 //*****************new******************
 Route::get('/profile/{username}/like',array(
+=======
+<<<<<<< HEAD
+//*****************new******************
+Route::get('profile/{username}/like',array(
+>>>>>>> origin/master
     'as'=>'profile-user-like',
     'uses'=>'ProfileController@like'
   ));
 //--------------------------------------*/
+<<<<<<< HEAD
 
 
 
@@ -99,4 +106,8 @@ Route::get('/profile/{username}/like',array(
 //});
 
 //Route::post('like','ProfileController@user');
+=======
+=======
+>>>>>>> origin/master
+>>>>>>> origin/master
  ?>
