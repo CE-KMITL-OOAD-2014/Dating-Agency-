@@ -6,7 +6,7 @@
 
 
 <//////////////////////visual box///////////////////////////////////////////>
- <div id="virsualbox" style="display:none; margin-top:50px" >
+ <div id="virtualbox" style="display:none; margin-top:50px" >
         <!-- Reference: https://github.com/ashleydw/lightbox/ -->
 </script src="//rawgithub.com/ashleydw/lightbox/master/dist/ekko-lightbox.js"></script>
 
@@ -24,7 +24,7 @@
                 <div class="panel-footer">
                 </////change link & title>
                     <h4>Send Heart</h4>
-                    <botton href="#" onClick="$('#virsualbox').hide(); $('#sendvirtualbox').show()">
+                    <botton href="#" onClick="$('#virtualbox').hide(); $('#sendvirtualbox').show()">
                     <botton class="btn btn-lg btn-info">Select</button>
                     </botton>
                 </div>
@@ -40,7 +40,7 @@
                 <div class="panel-footer">
                 </////change link & title>
                     <h4>Flower 1</h4>
-                    <botton href="#" onClick="$('#virsualbox').hide(); $('#sendvirtualbox').show()">
+                    <botton href="#" onClick="$('#virtualbox').hide(); $('#sendvirtualbox').show()">
                     <botton class="btn btn-lg btn-info">Select</button>
                     </botton>
                 </div>
@@ -56,7 +56,7 @@
                 <div class="panel-footer">
                 </////change link & title>
                     <h4>Flower 2</h4>
-                    <botton href="#" onClick="$('#virsualbox').hide(); $('#sendvirtualbox').show()">
+                    <botton href="#" onClick="$('#virtualbox').hide(); $('#sendvirtualbox').show()">
                     <botton class="btn btn-lg btn-info">Select</button>
                     </botton>
                 </div>
@@ -72,7 +72,7 @@
                 <div class="panel-footer">
                 </////change link & title>
                     <h4>Love you</h4>
-                    <botton href="#" onClick="$('#virsualbox').hide(); $('#sendvirtualbox').show()">
+                    <botton href="#" onClick="$('#virtualbox').hide(); $('#sendvirtualbox').show()">
                     <botton class="btn btn-lg btn-info">Select</button>
                     </botton>
                 </div>
@@ -88,7 +88,7 @@
                 <div class="panel-footer">
                 </////change link & title>
                     <h4>Smile with Heart</h4>
-                    <botton href="#" onClick="$('#virsualbox').hide(); $('#sendvirtualbox').show()">
+                    <botton href="#" onClick="$('#virtualbox').hide(); $('#sendvirtualbox').show()">
                     <botton class="btn btn-lg btn-info">Select</button>
                     </botton>
                 </div>
@@ -104,7 +104,7 @@
                 <div class="panel-footer">
                 </////change link & title>
                     <h4>Send Gift 1</h4>
-                    <botton href="#" onClick="$('#virsualbox').hide(); $('#sendvirtualbox').show()">
+                    <botton href="#" onClick="$('#virtualbox').hide(); $('#sendvirtualbox').show()">
                     <botton class="btn btn-lg btn-info">Select</button>
                     </botton>
                 </div>
@@ -120,7 +120,7 @@
                 <div class="panel-footer">
                 </////change link & title>
                     <h4>Send Gift 2</h4>
-                    <botton href="#" onClick="$('#virsualbox').hide(); $('#sendvirtualbox').show()">
+                    <botton href="#" onClick="$('#virtualbox').hide(); $('#sendvirtualbox').show()">
                     <botton class="btn btn-lg btn-info">Select</button>
                     </botton>
                 </div>
@@ -136,7 +136,7 @@
                 <div class="panel-footer">
                 </////change link & title>
                     <h4>Falling in Love 1</h4>
-                    <botton href="#" onClick="$('#virsualbox').hide(); $('#sendvirtualbox').show()">
+                    <botton href="#" onClick="$('#virtualbox').hide(); $('#sendvirtualbox').show()">
                     <botton class="btn btn-lg btn-info">Select</button>
                     </botton>
                 </div>
@@ -152,7 +152,7 @@
                 <div class="panel-footer">
                 </////change link & title>
                     <h4>Falling in Love 2</h4>
-                    <botton href="#" onClick="$('#virsualbox').hide(); $('#sendvirtualbox').show()">
+                    <botton href="#" onClick="$('#virtualbox').hide(); $('#sendvirtualbox').show()">
                     <botton class="btn btn-lg btn-info">Select</button>
                     </botton>
                 </div>
@@ -168,7 +168,7 @@
                 <div class="panel-footer">
                 </////change link & title>
                     <h4>Like</h4>
-                    <botton href="#" onClick="$('#virsualbox').hide(); $('#sendvirtualbox').show()">
+                    <botton href="#" onClick="$('#virtualbox').hide(); $('#sendvirtualbox').show()">
                     <botton class="btn btn-lg btn-info">Select</button>
                     </botton>
                 </div>
@@ -186,7 +186,7 @@
                 <div class="panel-footer">
                 </////change link & title>
                     <h4>Bear</h4>
-                    <botton href="#" onClick="$('#virsualbox').hide(); $('#sendvirtualbox').show()">
+                    <botton href="#" onClick="$('#virtualbox').hide(); $('#sendvirtualbox').show()">
                     <botton class="btn btn-lg btn-info">Select</button>
                     </botton>
                 </div>
@@ -202,7 +202,7 @@
                 <div class="panel-footer">
                 </////change link & title>
                     <h4>Ring</h4>
-                    <botton href="#" onClick="$('#virsualbox').hide(); $('#sendvirtualbox').show()">
+                    <botton href="#" onClick="$('#virtualbox').hide(); $('#sendvirtualbox').show()">
                     <botton class="btn btn-lg btn-info">Select</button>
                     </botton>
                 </div>
@@ -210,7 +210,7 @@
         </article>  
 
                 <BR>
-                <botton class="btn pull-right" href="#" onClick="$('#virsualbox').hide(); $('#likebox').show()">
+                <botton class="btn pull-right" href="#" onClick="$('#virtualbox').hide(); $('#likebox').show()">
                     <botton class="btn btn-lg btn-info">Not Select</button>
                 </botton>
         

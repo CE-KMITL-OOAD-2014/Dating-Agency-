@@ -16,6 +16,19 @@ class ProfileController extends BaseController {
  
 			return View::make('profile')
 				->with('users',User::all());
+ 		}
+
+
+public function like($username){
+		$user_like = User::where('username','=',$username);
+		if($user_like->count()){
+			$user_like=$user_like->first();
+			return View::make('profile.like', array('user' => Auth::user()))
+				->with('user_like',$user_like);
+		}
+		return App::abort(404);
+    }
+
 
 
       	/*
@@ -27,8 +40,7 @@ class ProfileController extends BaseController {
 		return App::abort(404);*/
     	// return View::make('profile');
 		//Redirect::to('/profile/{$user->username}');
-    }
-
+   
 
 }
 ?>

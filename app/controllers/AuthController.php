@@ -21,6 +21,11 @@ class AuthController extends BaseController {
         $user->profilepicture = Input::file('profilepicture')->getClientOriginalName();
         Input::file('profilepicture')->move('picture', $user->profilepicture);
 	    $user->save();
+	    
+	    $like = new Like;
+ 	    $like->user()->associate($user);
+  		$like->save();
+
         $credentials = Input::only('username', 'password');
         if(Auth::attempt($credentials)){
         return Redirect::to('/showprofile');

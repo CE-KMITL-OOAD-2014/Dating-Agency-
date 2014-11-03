@@ -1,4 +1,4 @@
-@extends('like')
+@extends('virtualitem')
 
 @section('profile')
 <!--

@@ -18,7 +18,7 @@ Route::post('/login', function(){
   return Redirect::to('register');
 });
 
-Route::get('logout', function(){
+Route::get('/logout', function(){
     Auth::logout();
     return Redirect::to('register');
 });
@@ -31,19 +31,19 @@ Route::post('/login', function(){
   return Redirect::to('register');
 });
 
-Route::get('register',function(){
+Route::get('/register',function(){
 	return View::make('register');
 });
 
-Route::post('register','AuthController@register');
+Route::post('/register','AuthController@register');
 
-Route::get('buildprofile',function(){
+Route::get('/buildprofile',function(){
 	return View::make('buildprofile');
 });
 
-Route::post('buildprofile','AuthController@register');
+Route::post('/buildprofile','AuthController@register');
 
-Route::get('showprofile', function(){
+Route::get('/showprofile', function(){
 	$username = "";
 	if(isset(Auth::user()->username)){
 		$username = Auth::user()->username;
@@ -53,20 +53,20 @@ Route::get('showprofile', function(){
 });
 
 
-Route::post('showprofile','AuthController@profile');
+Route::post('/showprofile','AuthController@profile');
 /*
 Route::get('profile',function(){
 
 //  return View::make('profile',array('user' =>Auth::user()));
 
 });*/
-Route::get('profile',array(
+Route::get('/profile',array(
     'as'=>'profile-Auth::user()',
     'uses'=>'ProfileController@users'
   ));
 
 
-Route::get('profile/{username}',array(
+Route::get('/profile/{username}',array(
     'as'=>'profile-user',
     'uses'=>'ProfileController@user'
   ));
@@ -78,8 +78,25 @@ Route::get('profile/{username}',array(
 //Route::post('/buildprofile','AuthController@buildprofile');
 
 
-Route::get('editprofile',function(){
+Route::get('/editprofile',function(){
 	return View::make('editprofile', array('user' => Auth::user()));
 });
 
+//*****************new******************
+Route::get('/profile/{username}/like',array(
+    'as'=>'profile-user-like',
+    'uses'=>'ProfileController@like'
+  ));
+//--------------------------------------*/
+
+
+
+
+
+//Route::get('/SendVirtualItem', function(){
+  //  Auth::SendVirtualItem();
+ //   return Redirect::to('like');
+//});
+
+//Route::post('like','ProfileController@user');
  ?>

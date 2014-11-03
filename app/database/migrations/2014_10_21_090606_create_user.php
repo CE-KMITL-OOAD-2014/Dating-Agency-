@@ -26,11 +26,12 @@ class CreateUser extends Migration {
             $table->string('email', 25)->unique()->nullable(false);
             $table->string('facebook', 60)->unique()->nullable(false);
             $table->string('lineid', 30)->unique()->nullable(false); 
-            $table->string('profilepicture',100)->nullable(true);
+            $table->string('profilepicture',100)->nullable(false);
             $table->string('remember_token', 100)->nullable();
 
             $table->timestamps();
          });
+           
       }
 
       /**
@@ -41,6 +42,7 @@ class CreateUser extends Migration {
       public function down()
       {
             Schema::drop('users');
+           
       }
 
 }
