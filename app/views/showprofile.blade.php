@@ -21,14 +21,7 @@
             <div class="panel-heading">
               <h3 class="panel-title">{{$user ->username }}</h3>
             </div>
-<<<<<<< HEAD
-            
-=======
-<<<<<<< HEAD
-            
-=======
->>>>>>> origin/master
->>>>>>> origin/master
+
             <div class="panel-body">
               <div class="row">
                 <div class="col-md-3 col-lg-3 " align="center"><img alt="User Pic" src="picture/{{ $user->profilepicture }}" width="100" height="100" class="img-circle"> </div>
@@ -58,7 +51,7 @@
                         <td>Work :</td>
                         <td>{{$user ->work}}</td>
                       </tr>    
-          <tr>
+                       <tr>
                         <td>Interest :</td>
                         <td>{{$user ->interest}}</td>
                       </tr>
@@ -103,8 +96,7 @@
                         </span>
                         <br><br>
                     </div>
-                    
-          </div>
+                   </div>
 
                 <span class="pull-right">
                     <div class="col-md-12 control">

@@ -1,6 +1,6 @@
-@extends('virtualitem')
+@extends('layout')
 
-@section('profile')
+@section('content')
 <!--
  <div id="likebox" style=" margin-top:50px;" >                    
     <center>

@@ -32,23 +32,23 @@ Route::post('/login', function(){
 });
 
 Route::get('/register',function(){
-	return View::make('register');
+  return View::make('register');
 });
 
 Route::post('/register','AuthController@register');
 
 Route::get('/buildprofile',function(){
-	return View::make('buildprofile');
+  return View::make('buildprofile');
 });
 
 Route::post('/buildprofile','AuthController@register');
 
 Route::get('/showprofile', function(){
-	$username = "";
-	if(isset(Auth::user()->username)){
-		$username = Auth::user()->username;
+  $username = "";
+  if(isset(Auth::user()->username)){
+    $username = Auth::user()->username;
 }
-	return View::make('showprofile', array('user' => Auth::user()));
+  return View::make('showprofile', array('user' => Auth::user()));
 
 });
 
@@ -79,35 +79,31 @@ Route::get('/profile/{username}',array(
 
 
 Route::get('/editprofile',function(){
-	return View::make('editprofile', array('user' => Auth::user()));
+  return View::make('editprofile', array('user' => Auth::user()));
 });
 
-<<<<<<< HEAD
+
 //*****************new******************
 Route::get('/profile/{username}/like',array(
-=======
-<<<<<<< HEAD
-//*****************new******************
-Route::get('profile/{username}/like',array(
->>>>>>> origin/master
     'as'=>'profile-user-like',
     'uses'=>'ProfileController@like'
   ));
 //--------------------------------------*/
-<<<<<<< HEAD
+
+Route::get('/profile/{username}/like/SendVirtalItem', array(
+    'as' => 'profile-user-like-SendVirtalItem',
+    'uses' => 'ProfileController@like'
+));
 
 
+Route::get('/virtualitem',function(){
+  return View::make('virtualitem');
+});
+
+Route::get('/ok', function(){
+    User::OK();
+    return Redirect::to('profile');
+});
 
 
-
-//Route::get('/SendVirtualItem', function(){
-  //  Auth::SendVirtualItem();
- //   return Redirect::to('like');
-//});
-
-//Route::post('like','ProfileController@user');
-=======
-=======
->>>>>>> origin/master
->>>>>>> origin/master
  ?>
