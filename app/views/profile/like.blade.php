@@ -11,9 +11,9 @@
  
 
 </center>
- <form action = "SendVirtualItem" method = "get">
-                            <div class="col-sm-12 controls">
-                                <button id="btn-sendvirtualitem" type="submit" class="btn btn-primary">SendVirtualItem</button>
-                                </div>
-                            </form>
+
+<a href="insertvirtualitem" >
+                  <button id="SendVirtualItem" type="submit" class="btn btn-success">SendVirtualItem</button>
+                </a>
+                                  
 @stop

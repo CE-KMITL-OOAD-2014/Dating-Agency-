@@ -23,14 +23,6 @@ Route::get('/logout', function(){
     return Redirect::to('register');
 });
 
-Route::post('/login', function(){
-  $credentials = Input::only('username', 'password');
-  if(Auth::attempt($credentials)){
-    return Redirect::to('showprofile');
-  }
-  return Redirect::to('register');
-});
-
 Route::get('/register',function(){
   return View::make('register');
 });
@@ -44,66 +36,77 @@ Route::get('/buildprofile',function(){
 Route::post('/buildprofile','AuthController@register');
 
 Route::get('/showprofile', function(){
-  $username = "";
-  if(isset(Auth::user()->username)){
-    $username = Auth::user()->username;
-}
   return View::make('showprofile', array('user' => Auth::user()));
 
 });
 
 
 Route::post('/showprofile','AuthController@profile');
-/*
-Route::get('profile',function(){
 
-//  return View::make('profile',array('user' =>Auth::user()));
-
-});*/
 Route::get('/profile',array(
     'as'=>'profile-Auth::user()',
     'uses'=>'ProfileController@users'
   ));
-
 
 Route::get('/profile/{username}',array(
     'as'=>'profile-user',
     'uses'=>'ProfileController@user'
   ));
 
+Route::get('editprofile/{username}',array(
+    'as'=>'editprofile-user',
+    'uses'=>'AuthController@edit'
+  ));
 
-//Route::post('profile','AuthController@profile');
-//Route::post('like','ProfileController@user');
+Route::post('editprofile/{username}',array(
+   'as'=>'editprofile-user',
+    'uses'=>'AuthController@update'
+  ));
 
-//Route::post('/buildprofile','AuthController@buildprofile');
+Route::get('/forgot-password',array(
+    'uses'=>'AuthController@get_forgotPassword'
+  ));
 
+Route::post('/forgot-password',array(
+    'uses'=>'AuthController@post_forgotPassword'
+  ));
 
-Route::get('/editprofile',function(){
-  return View::make('editprofile', array('user' => Auth::user()));
-});
+Route::get('/change-password/{username}',array( 
+  'as'=>'change-password-user',
+    'uses'=>'AuthController@get_updatepassword'
+  ));
 
+Route::post('/change-password/{username}',array(
+  'as'=>'change-password-user',
+    'uses'=>'AuthController@post_updatepassword'
+  ));
 
-//*****************new******************
-Route::get('/profile/{username}/like',array(
+oute::get('profile/{username}/like',array(
     'as'=>'profile-user-like',
     'uses'=>'ProfileController@like'
   ));
-//--------------------------------------*/
 
-Route::get('/profile/{username}/like/SendVirtalItem', array(
-    'as' => 'profile-user-like-SendVirtalItem',
-    'uses' => 'ProfileController@like'
-));
+Route::get('profile/{username}/dislike',array(
+    'as'=>'profile-user-dislike',
+    'uses'=>'ProfileController@dislike'
+  ));
+
+Route::get('/profile/{username}/insertvirtualitem',array(
+    'as'=>'profile-user-insertvirtualitem',
+    'uses'=>'AuthController@virtual'
+  ));
+
+// Route::get('/sendvirtualsuccess',function(){
+//   return View::make('sendvirtualsuccess');
+// });
 
 
-Route::get('/virtualitem',function(){
-  return View::make('virtualitem');
-});
+// Route::get('/profile/{username}/insertvirtualitem',function(){
+//   return View::make('insertvirtualitem');
+// });
 
-Route::get('/ok', function(){
-    User::OK();
-    return Redirect::to('profile');
-});
+
+// Route::post('/profile/{username}/insertvirtualitem','AuthController@virtual');
 
 
  ?>

@@ -89,7 +89,7 @@
             -->                                   
                             <form action = "logout" method = "get">
                             <div class="col-sm-12 controls">
-                                <a type="button"  href="edit.html" class="btn btn-primary">Edit Profile</a>
+                                <a type="button"  href="/editprofile/{{$user->username}}" class="btn btn-primary">Edit Profile</a>
                                 <button id="btn-logout" type="submit" class="btn btn-primary">Logout</button>
                                 </div>
                             </form>
@@ -101,7 +101,7 @@
                 <span class="pull-right">
                     <div class="col-md-12 control">
                 <a href="profile" >
-                  <button id="btn-logout" type="submit" class="btn btn-success">Show Other Profile</button>
+                  <button id="btn-showotherprofile" type="submit" class="btn btn-success">Show Other Profile</button>
                 </a>
           </div>
           </span>

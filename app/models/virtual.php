@@ -5,18 +5,15 @@ use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableTrait;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
-class Like extends Eloquent
-{
+class Virtual extends Eloquent{
 	use UserTrait, RemindableTrait;
  // Album __belongs_to__ Artist
-	protected $table = 'likes';
+	protected $table = 'virtuals';
 	/*public function user()
 	{
 	return $this->belongsTo('User');
 	}*/
-	 public function getReminderUser()
-  {
-    return $this->like;
-  }
-
+	 public function getReminderUser(){
+        return $this->user_virtual;
+     }
 }

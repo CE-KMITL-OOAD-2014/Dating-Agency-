@@ -3,28 +3,33 @@
 @section('content')
 
 
-<//////////////////////visual box///////////////////////////////////////////>
- <div id="virsualbox" style="margin-top:50px" >
+<//////////////////////virtual box///////////////////////////////////////////>
+ <div id="virtualbox" style="margin-top:50px" >
         <!-- Reference: https://github.com/ashleydw/lightbox/ -->
-</script src="//rawgithub.com/ashleydw/lightbox/master/dist/ekko-lightbox.js"></script>
+
 
 
 <div class="container mt40">
     <section class="row">
-        
+        {{ Form::open(array('to' => 'register', 'class' => 'form-horizontal',
+                'id' => 'virtual-form', 'role' => 'form', 'files' => true))}}
              <h2>Select Virtual Item</h2>
-        
         <article class="col-xs-12 col-sm-6 col-md-3">
             <div class="panel panel-default">
                 <div class="panel-body">
+                 
                     </////change link & title>
-                        <img src="http://image.ohozaa.com/i/063/LdGdQs.jpg" HEIGHT=230 WIDTH=230 alt="Send Heart" />
+                       <!-- <img src="/virtualpic/1.jpg" HEIGHT=230 WIDTH=230 alt="Send Heart" />-->
+                        Please choose a file: <input type="file" name="inputvirtualpic"><br>
+                
                 </div>
                 <div class="panel-footer">
                 </////change link & title>
                     <h4>Send Heart</h4>
-                    <botton href="#" onClick="$('#virsualbox').hide(); $('#sendvirtualbox').show()">
-                    <botton class="btn btn-lg btn-info">Select</button>
+                    <botton href="#" onClick="$('#virtualbox').hide(); $('#sendvirtualbox').show()">
+                    <a href="/sendvirtualsuccess" >
+                    <botton id="select1" type="submit"class="btn btn-lg btn-info">Select1</button>
+                    </a>
                     </botton>
                 </div>
             </div>
@@ -34,13 +39,15 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     </////change link & title>
-                        <img src="http://image.ohozaa.com/i/4fa/9uARyl.JPG" HEIGHT=230  WIDTH=230 alt="Flower 1" />
+                        <img src="/virtualpic/2.jpg" HEIGHT=230  WIDTH=230 alt="Flower 1" />
                 </div>
                 <div class="panel-footer">
                 </////change link & title>
                     <h4>Flower 1</h4>
-                    <botton href="#" onClick="$('#virsualbox').hide(); $('#sendvirtualbox').show()">
-                    <botton class="btn btn-lg btn-info">Select</button>
+                    <botton href="#" onClick="$('#virtualbox').hide(); $('#sendvirtualbox').show()">
+                    <a href="/sendvirtualsuccess" >
+                    <botton class="btn btn-lg btn-info">Select2</button>
+                    </a>
                     </botton>
                 </div>
             </div>
@@ -50,13 +57,15 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     </////change link & title>
-                        <img src="http://image.ohozaa.com/i/2b9/hCNtb8.JPG" HEIGHT=230  WIDTH=230 alt="Flower 2" />
+                        <img src="/virtualpic/3.jpg" HEIGHT=230  WIDTH=230 alt="Flower 2" />
                 </div>
                 <div class="panel-footer">
                 </////change link & title>
                     <h4>Flower 2</h4>
-                    <botton href="#" onClick="$('#virsualbox').hide(); $('#sendvirtualbox').show()">
-                    <botton class="btn btn-lg btn-info">Select</button>
+                    <botton href="#" onClick="$('#virtualbox').hide(); $('#sendvirtualbox').show()">
+                    <a href="/sendvirtualsuccess" >
+                    <botton class="btn btn-lg btn-info">Select3</button>
+                    </a>
                     </botton>
                 </div>
             </div>
@@ -66,13 +75,15 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     </////change link & title>
-                        <img src="http://image.ohozaa.com/i/f83/8hDR6v.JPG" HEIGHT=230  WIDTH=230 alt="Love you" />
+                        <img src="/virtualpic/4.jpg" HEIGHT=230  WIDTH=230 alt="Love you" />
                 </div>
                 <div class="panel-footer">
                 </////change link & title>
                     <h4>Love you</h4>
-                    <botton href="#" onClick="$('#virsualbox').hide(); $('#sendvirtualbox').show()">
-                    <botton class="btn btn-lg btn-info">Select</button>
+                    <botton href="#" onClick="$('#virtualbox').hide(); $('#sendvirtualbox').show()">
+                    <a href="/sendvirtualsuccess" >
+                    <botton class="btn btn-lg btn-info">Select4</button>
+                    </a>
                     </botton>
                 </div>
             </div>
@@ -82,13 +93,15 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     </////change link & title>
-                        <img src="http://image.ohozaa.com/i/f7f/ZHgsuR.JPG" HEIGHT=230  WIDTH=230 alt="Smile with Heart" />
+                        <img src="/virtualpic/5.jpg" HEIGHT=230  WIDTH=230 alt="Smile with Heart" />
                 </div>
                 <div class="panel-footer">
                 </////change link & title>
                     <h4>Smile with Heart</h4>
-                    <botton href="#" onClick="$('#virsualbox').hide(); $('#sendvirtualbox').show()">
-                    <botton class="btn btn-lg btn-info">Select</button>
+                    <botton href="#" onClick="$('#virtualbox').hide(); $('#sendvirtualbox').show()">
+                    <a href="/sendvirtualsuccess" >
+                    <botton class="btn btn-lg btn-info">Select5</button>
+                    </a>
                     </botton>
                 </div>
             </div>
@@ -98,13 +111,15 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     </////change link & title>
-                        <img src="http://image.ohozaa.com/i/62e/M4rl2V.JPG" HEIGHT=230  WIDTH=230 alt="Send Gift 1" />
+                        <img src="/virtualpic/6.jpg" HEIGHT=230  WIDTH=230 alt="Send Gift 1" />
                 </div>
                 <div class="panel-footer">
                 </////change link & title>
                     <h4>Send Gift 1</h4>
-                    <botton href="#" onClick="$('#virsualbox').hide(); $('#sendvirtualbox').show()">
-                    <botton class="btn btn-lg btn-info">Select</button>
+                    <botton href="#" onClick="$('#virtualbox').hide(); $('#sendvirtualbox').show()">
+                    <a href="/sendvirtualsuccess" >
+                    <botton class="btn btn-lg btn-info">Select6</button>
+                    </a>
                     </botton>
                 </div>
             </div>
@@ -114,13 +129,15 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     </////change link & title>
-                        <img src="http://image.ohozaa.com/i/a22/KoNi0.jpg" HEIGHT=230  WIDTH=230 alt="Send Gift 2" />
+                        <img src="/virtualpic/7.jpg" HEIGHT=230  WIDTH=230 alt="Send Gift 2" />
                 </div>
                 <div class="panel-footer">
                 </////change link & title>
                     <h4>Send Gift 2</h4>
-                    <botton href="#" onClick="$('#virsualbox').hide(); $('#sendvirtualbox').show()">
-                    <botton class="btn btn-lg btn-info">Select</button>
+                    <botton href="#" onClick="$('#virtualbox').hide(); $('#sendvirtualbox').show()">
+                    <a href="/sendvirtualsuccess" >
+                    <botton class="btn btn-lg btn-info">Select7</button>
+                    </a>
                     </botton>
                 </div>
             </div>
@@ -130,13 +147,15 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     </////change link & title>
-                        <img src="http://image.ohozaa.com/i/736/XFKugF.JPG" HEIGHT=230  WIDTH=230 alt="Falling in Love 1" />
+                        <img src="/virtualpic/8.jpg" HEIGHT=230  WIDTH=230 alt="Falling in Love 1" />
                 </div>
                 <div class="panel-footer">
                 </////change link & title>
                     <h4>Falling in Love 1</h4>
-                    <botton href="#" onClick="$('#virsualbox').hide(); $('#sendvirtualbox').show()">
-                    <botton class="btn btn-lg btn-info">Select</button>
+                    <botton href="#" onClick="$('#virtualbox').hide(); $('#sendvirtualbox').show()">
+                    <a href="/sendvirtualsuccess" >
+                    <botton class="btn btn-lg btn-info">Select8</button>
+                    </a>
                     </botton>
                 </div>
             </div>
@@ -146,13 +165,15 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     </////change link & title>
-                        <img src="http://image.ohozaa.com/i/166/cmdRfg.JPG" HEIGHT=230  WIDTH=230 alt="Falling in Love 2" />
+                        <img src="/virtualpic/9.jpg" HEIGHT=230  WIDTH=230 alt="Falling in Love 2" />
                 </div>
                 <div class="panel-footer">
                 </////change link & title>
                     <h4>Falling in Love 2</h4>
-                    <botton href="#" onClick="$('#virsualbox').hide(); $('#sendvirtualbox').show()">
-                    <botton class="btn btn-lg btn-info">Select</button>
+                    <botton href="#" onClick="$('#virtualbox').hide(); $('#sendvirtualbox').show()">
+                    <a href="/sendvirtualsuccess" >
+                    <botton class="btn btn-lg btn-info">Select9</button>
+                    </a>
                     </botton>
                 </div>
             </div>
@@ -162,13 +183,15 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     </////change link & title>
-                        <img src="http://image.ohozaa.com/i/eb3/bObMn6.JPG"  HEIGHT=230  WIDTH=230 alt="Like" />
+                        <img src="/virtualpic/10.jpg"  HEIGHT=230  WIDTH=230 alt="Like" />
                 </div>
                 <div class="panel-footer">
                 </////change link & title>
                     <h4>Like</h4>
-                    <botton href="#" onClick="$('#virsualbox').hide(); $('#sendvirtualbox').show()">
-                    <botton class="btn btn-lg btn-info">Select</button>
+                    <botton href="#" onClick="$('#virtualbox').hide(); $('#sendvirtualbox').show()">
+                    <a href="/sendvirtualsuccess" >
+                    <botton class="btn btn-lg btn-info">Select10</button>
+                    </a>
                     </botton>
                 </div>
             </div>
@@ -180,13 +203,15 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     </////change link & title>
-                        <img src="http://image.ohozaa.com/i/601/Pu52xN.JPG" HEIGHT=230  WIDTH=230 alt="Bear" />
+                        <img src="/virtualpic/11.jpg" HEIGHT=230  WIDTH=230 alt="Bear" />
                 </div>
                 <div class="panel-footer">
                 </////change link & title>
                     <h4>Bear</h4>
-                    <botton href="#" onClick="$('#virsualbox').hide(); $('#sendvirtualbox').show()">
-                    <botton class="btn btn-lg btn-info">Select</button>
+                    <botton href="#" onClick="$('#virtualbox').hide(); $('#sendvirtualbox').show()">
+                    <a href="/sendvirtualsuccess" >
+                    <botton class="btn btn-lg btn-info">Select11</button>
+                    </a>
                     </botton>
                 </div>
             </div>
@@ -196,36 +221,34 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     </////change link & title>
-                        <img src="http://image.ohozaa.com/i/4c7/7koBrD.JPG"  HEIGHT=230  WIDTH=230 alt="Ring" />
+                        <img src="/virtualpic/12.jpg"  HEIGHT=230  WIDTH=230 alt="Ring" />
                 </div>
                 <div class="panel-footer">
                 </////change link & title>
                     <h4>Ring</h4>
-                    <botton href="#" onClick="$('#virsualbox').hide(); $('#sendvirtualbox').show()">
-                    <botton class="btn btn-lg btn-info">Select</button>
+                    <botton href="#" onClick="$('#virtualbox').hide(); $('#sendvirtualbox').show()">
+                    <a href="/sendvirtualsuccess" >
+                    <botton class="btn btn-lg btn-info">Select12</button>
+                    </a>
                     </botton>
                 </div>
             </div>
         </article>  
 
                 <BR>
-                <botton class="btn pull-right" href="#" onClick="$('#virsualbox').hide(); $('#likebox').show()">
+                <botton class="btn pull-right" href="#" onClick="$('#virtualbox').hide(); $('#likebox').show()">
+                <a href="/sendvirtualsuccess" >
                     <botton class="btn btn-lg btn-info">Not Select</button>
+                    </a>
                 </botton>
         
 
 <section>
+{{Form::close()}}
 </div>
  </div>
 
-<///////////////////send virtual box////////////////////>
-    <center>
-        <h2>send virtual success</h2>
-        <BR>    
-
-                      <form action = "OK" method = "get">
-                            <div class="col-sm-12 controls">
-                                <button id="btn-ok" type="submit" class="btn btn-primary">OK</button>
-                                </div>
-                            </form>
 @stop
+
+
+

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Lll extends Migration {
+class Createuser extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -27,6 +27,8 @@ class Lll extends Migration {
             $table->string('email', 25)->unique()->nullable(false);
             $table->string('facebook', 60)->unique()->nullable(false);
             $table->string('lineid', 30)->unique()->nullable(false); 
+            $table->string('code',60)->unique()->nullable(true);
+            $table->string('pass',10)->nullable()->nullable(true);
             $table->string('profilepicture',100);
             $table->string('remember_token', 100)->nullable();
 
@@ -36,22 +38,22 @@ class Lll extends Migration {
 			Schema::create('likes', function($table)
 			{
 				$table->increments('id');
-				$table->integer('user_id')->unsigned();
-				$table->foreign('user_id')->references('id')->on('users');
-				$table->integer('total');
-				$table->integer('status1');
-				$table->integer('status2');
-				$table->integer('status3');
-				$table->integer('status4');
-				$table->integer('status5');
-				$table->integer('status6');
-				$table->integer('status7');
-				$table->integer('status8');
-				$table->integer('status9');
-				$table->integer('status10');
+				$table->string('user1');
+				$table->string('user2');
+				$table->boolean('addfriend');
 				$table->timestamps();
 
 		});
+            
+            Schema::create('virtuals', function($table){
+			$table->increments('id');
+			$table->string('user1');
+			$table->string('user2');
+			$table->string('send');
+			$table->timestamps();
+		});
+
+
 	}
 
 	/**
@@ -64,6 +66,7 @@ class Lll extends Migration {
 		//
 		Schema::drop('users');
 		Schema::drop('likes');
+		Schema::drop('virtuals');
 	}
 
 }

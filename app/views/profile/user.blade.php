@@ -69,16 +69,10 @@
               </div>
             </div>
                  <div class="panel-footer">
-                        <span class="pull-right">
-                        <!--
-                           <a type="button"  href="edit.html" class="btn btn-primary">Edit Profile</a>
-                                        <a type="button" href="http://localhost/laravel/public/register" class="btn btn-primary">Logout</a>
-                                                -->                                                                                             
-
-                                                <form action = "logout" method = "get">
+                        <span class="pull-right">                                                                                          
+                                                <form action = "backtoyourprofile" method = "get">
                                                 <div class="col-sm-12 controls">
                                                         <a type="button"  href="/showprofile"class="btn btn-primary">Back To Your Profile</a>
-                                                        <!--button id="btn-logout" type="submit" class="btn btn-primary">Logout</button-->
                                                         </div>
                                                         </form>
                         </span>
@@ -91,11 +85,6 @@
       </div>
     </div>
     </div>
-
-
-
-
-
     </center>
 </div>
 
