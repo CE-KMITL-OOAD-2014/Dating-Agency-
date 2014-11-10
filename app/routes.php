@@ -81,7 +81,7 @@ Route::post('/change-password/{username}',array(
     'uses'=>'AuthController@post_updatepassword'
   ));
 
-oute::get('profile/{username}/like',array(
+Route::get('profile/{username}/like',array(
     'as'=>'profile-user-like',
     'uses'=>'ProfileController@like'
   ));
