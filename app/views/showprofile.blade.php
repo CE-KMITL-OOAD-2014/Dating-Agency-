@@ -100,11 +100,14 @@
 
                 <span class="pull-right">
                     <div class="col-md-12 control">
-                <a href="profile" >
+                <a href="/profile" >
                   <button id="btn-showotherprofile" type="submit" class="btn btn-success">Show Other Profile</button>
                 </a>
-          </div>
-          </span>
+                <a href="/recieve-message" >
+                  <button id="btn-showotherprofile" type="submit" class="btn btn-success">Show Recieve Message</button>
+                </a>
+                    </div>
+                </span>
 
         </div>
       </div>

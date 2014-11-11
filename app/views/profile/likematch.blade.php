@@ -21,7 +21,7 @@
 
   <center>   
   <div class="col-sm-12 controls">
-                            <a href="/chatbox" >
+                            <a href="chatbox" >
                                 <button id="btn-ok" type="submit" class="btn btn-primary">Chat</button>
                                 </a>
                                 </div>

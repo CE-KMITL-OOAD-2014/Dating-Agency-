@@ -45,13 +45,16 @@ class Createuser extends Migration {
 
 		});
             
-            Schema::create('virtuals', function($table){
-			$table->increments('id');
-			$table->string('user1');
-			$table->string('user2');
-			$table->string('send');
-			$table->timestamps();
-		});
+            Schema::create('chats', function($table)
+			{
+				$table->increments('id');
+				$table->string('sender');
+				$table->string('reciever');
+				$table->string('message');
+				$table->boolean('read');
+				$table->timestamps();
+
+			});
 
 
 	}
@@ -66,7 +69,8 @@ class Createuser extends Migration {
 		//
 		Schema::drop('users');
 		Schema::drop('likes');
-		Schema::drop('virtuals');
+		Schema::drop('chats');
 	}
+
 
 }

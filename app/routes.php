@@ -10,6 +10,8 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
+
+//user login to website
 Route::post('/login', function(){
   $credentials = Input::only('username', 'password');
   if(Auth::attempt($credentials)){
@@ -18,28 +20,33 @@ Route::post('/login', function(){
   return Redirect::to('register');
 });
 
+//user logout
 Route::get('/logout', function(){
     Auth::logout();
     return Redirect::to('register');
 });
 
+//get register page view
 Route::get('/register',function(){
   return View::make('register');
 });
 
+//post data to register page
 Route::post('/register','AuthController@register');
 
+//get buildprofile page view
 Route::get('/buildprofile',function(){
   return View::make('buildprofile');
 });
 
+//post data to buildprofile page
 Route::post('/buildprofile','AuthController@register');
 
+//get showprofile page view
 Route::get('/showprofile', function(){
   return View::make('showprofile', array('user' => Auth::user()));
 
 });
-
 
 Route::post('/showprofile','AuthController@profile');
 
@@ -91,9 +98,21 @@ Route::get('profile/{username}/dislike',array(
     'uses'=>'ProfileController@dislike'
   ));
 
-Route::get('/profile/{username}/insertvirtualitem',array(
-    'as'=>'profile-user-insertvirtualitem',
-    'uses'=>'AuthController@virtual'
+// Route::get('/profile/{username}/virtualitem',array(
+//     'as'=>'profile-user-insertvirtualitem',
+//     'uses'=>'AuthController@virtual'
+//   ));
+
+Route::get('/profile/{username}/chatbox',array(
+    'as'=>'profile-user-chatbox',
+    'uses'=>'ChatController@chat'
+  ));
+Route::post('/profile/{username}/chatbox',array(
+    'as'=>'profile-user-chatbox-send',
+    'uses'=>'ChatController@send_message'
+  ));
+Route::get('/recieve-message',array(
+    'uses'=>'ChatController@recieve_message'
   ));
 
 // Route::get('/sendvirtualsuccess',function(){
