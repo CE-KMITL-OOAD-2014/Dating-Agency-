@@ -12,7 +12,7 @@
 
 </center>
 
-<a href="insertvirtualitem" >
+<a href="virtualitem" >
                   <button id="SendVirtualItem" type="submit" class="btn btn-success">SendVirtualItem</button>
                 </a>
                                   

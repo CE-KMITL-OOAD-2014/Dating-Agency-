@@ -13,6 +13,7 @@ class Createuser extends Migration {
 	public function up()
 	{
 		//
+		//
 		Schema::create('users', function($table){
             $table->increments('id');
             $table->string('username', 30)->unique()->nullable(false);
@@ -43,7 +44,7 @@ class Createuser extends Migration {
 				$table->boolean('addfriend');
 				$table->timestamps();
 
-		});
+			});
             
             Schema::create('chats', function($table)
 			{
@@ -56,7 +57,16 @@ class Createuser extends Migration {
 
 			});
 
+			 Schema::create('virtuals', function($table)
+			{
+				$table->increments('id');
+				$table->string('sender');
+				$table->string('reciever');
+				$table->string('virtual',100);
+				$table->boolean('read');
+				$table->timestamps();
 
+			});
 	}
 
 	/**
@@ -70,7 +80,8 @@ class Createuser extends Migration {
 		Schema::drop('users');
 		Schema::drop('likes');
 		Schema::drop('chats');
-	}
+		Schema::drop('virtuals');
 
+	}
 
 }

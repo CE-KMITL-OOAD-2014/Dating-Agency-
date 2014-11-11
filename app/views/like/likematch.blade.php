@@ -1,78 +1,92 @@
+
+
+
 @extends('layout')
 
 @section('content')
+
+
+
+<center>
+  <h2>Like Match Success</h2>
+  <br>
+
+ {{$user->username}} <h7>add </h7>
+  {{$user_like->username}} <h7>success</h7>
+  
+ 
+</center>
+
+
+
+
+
+
 <div id="profilebox" style="margin-top:50px" >
 
 
 <div class="container">
       <div class="row">
       <center>
-      <h1><u>Your Profile</u></h1>
+      <h1><u>{{$user_like->username}} Profile</u></h1>
       </center>
       <br>
-     <!--<div class="col-md-4  toppad  pull-right col-md-offset-3 ">
-           <A href="edit.html" >Edit Profile</A>
-           <p>
-          <A href="http://localhost/laravel/public/register" >Logout</A>
-      </div>
-      -->
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
           <div class="panel panel-info">
             <div class="panel-heading">
-              <h3 class="panel-title">{{$user ->username }}</h3>
+              <h3 class="panel-title">{{$user_like ->username }}</h3>
             </div>
 
             <div class="panel-body">
               <div class="row">
-                <div class="col-md-3 col-lg-3 " align="center"><img alt="User Pic" src="picture/{{ $user->profilepicture }}" width="100" height="100" class="img-circle"> </div>
+                <div class="col-md-3 col-lg-3 " align="center"><img alt="User Pic" src="/picture/{{$user_like -> profilepicture}}" width="100" height="100" class="img-circle"> </div>
                 <div class=" col-md-9 col-lg-9 "> 
                   <table class="table table-user-information">
                     <tbody>
                       <tr>
                         <td>First Name :</td>
-                        <td>{{$user ->firstname}}</td>
+                        <td>{{$user_like ->firstname}}</td>
                       </tr>
                       <tr>
                         <td>Last Name :</td>
-                        <td>{{$user ->lastname}}</td>
+                        <td>{{$user_like ->lastname}}</td>
                       </tr>
 
                       <tr>
                         <td>Age :</td>
-                        <td>{{$user ->age}}</td>
+                        <td>{{$user_like ->age}}</td>
                       </tr>
                    
                          <tr>
                              <tr>
                         <td>Gender :</td>
-                        <td>{{$user ->gender}}</td>
+                        <td>{{$user_like ->gender}}</td>
                       </tr>
                         <tr>
                         <td>Work :</td>
-                        <td>{{$user ->work}}</td>
+                        <td>{{$user_like ->work}}</td>
                       </tr>    
                        <tr>
                         <td>Interest :</td>
-                        <td>{{$user ->interest}}</td>
+                        <td>{{$user_like ->interest}}</td>
                       </tr>
                    
-                         <tr>
-                             <tr>
+                         
+                      <tr>
                         <td>Telephone :</td>
-                        <td>{{$user ->tel}}</td>
+                        <td>{{$user_like ->tel}}</td>
                       </tr>
                         <tr>
                         <td>E-mail :</td>
-                        <td><a href="mailto:info@support.com">{{$user ->email}}</a></td>
+                        <td><a href="mailto:info@support.com">{{$user_like ->email}}</a></td>
                       </tr>
                       <tr>
                         <td>Line ID :</td>
-                        <td>{{$user ->lineid}}</td>
+                        <td>{{$user_like ->lineid}}</td>
                       </tr>
                         <td>Facebook :</td>
-                        <td>{{$user ->facebook}}
-                        </td>
-                           
+                        <td>{{$user_like ->facebook}}
+                        </td>        
                       </tr>
                      
                     </tbody>
@@ -86,29 +100,21 @@
                         <!--
                            <a type="button"  href="edit.html" class="btn btn-primary">Edit Profile</a>
                         <a type="button" href="http://localhost/laravel/public/register" class="btn btn-primary">Logout</a>
-            -->                                   
-                            <form action = "logout" method = "get">
-                            <div class="col-sm-12 controls">
-                                <a type="button"  href="/editprofile/{{$user->username}}" class="btn btn-primary">Edit Profile</a>
-                                <button id="btn-logout" type="submit" class="btn btn-primary">Logout</button>
-                                </div>
-                            </form>
+            -->              <a href="/showprofile" >
+                                  <button id="btn-showprofile" type="submit" class="btn btn-success">Back To Your Profile</button>
+                            </a>
+                           
+                            <a href="chatbox" >
+                                <button id="btn-ok" type="submit" class="btn btn-success">Chat</button>
+                              </a>
+
+
+                     
                         </span>
                         <br><br>
                     </div>
                    </div>
-
-                <span class="pull-right">
-                    <div class="col-md-12 control">
-                <a href="/profile" >
-                  <button id="btn-showotherprofile" type="submit" class="btn btn-success">Show Other Profile</button>
-                </a>
-                <a href="/recieve-message" >
-                  <button id="btn-showotherprofile" type="submit" class="btn btn-success">Show Recieve Message</button>
-                </a>
-                    </div>
-                </span>
-
+     
         </div>
       </div>
     </div>

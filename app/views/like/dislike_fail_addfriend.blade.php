@@ -5,7 +5,7 @@
   
   <h2>Fail</h2>
   <br>
-  <h7>add friend already</h7>
+  <h7>{{$user->username}} add friend {{$user_dislike->username}} already</h7>
  
 </center>
 

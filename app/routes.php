@@ -28,7 +28,7 @@ Route::get('/logout', function(){
 
 //get register page view
 Route::get('/register',function(){
-  return View::make('register');
+  return View::make('auth.register');
 });
 
 //post data to register page
@@ -36,7 +36,7 @@ Route::post('/register','AuthController@register');
 
 //get buildprofile page view
 Route::get('/buildprofile',function(){
-  return View::make('buildprofile');
+  return View::make('profile.buildprofile');
 });
 
 //post data to buildprofile page
@@ -44,30 +44,30 @@ Route::post('/buildprofile','AuthController@register');
 
 //get showprofile page view
 Route::get('/showprofile', function(){
-  return View::make('showprofile', array('user' => Auth::user()));
+  return View::make('profile.showprofile', array('user' => Auth::user()));
 
 });
 
-Route::post('/showprofile','AuthController@profile');
+Route::post('/showprofile','ProfileController@profile');
 
 Route::get('/profile',array(
     'as'=>'profile-Auth::user()',
-    'uses'=>'ProfileController@users'
+    'uses'=>'ProfileController@profile'
   ));
 
 Route::get('/profile/{username}',array(
     'as'=>'profile-user',
-    'uses'=>'ProfileController@user'
+    'uses'=>'LikeController@user'
   ));
 
 Route::get('editprofile/{username}',array(
     'as'=>'editprofile-user',
-    'uses'=>'AuthController@edit'
+    'uses'=>'ProfileController@edit'
   ));
 
 Route::post('editprofile/{username}',array(
    'as'=>'editprofile-user',
-    'uses'=>'AuthController@update'
+    'uses'=>'ProfileController@update'
   ));
 
 Route::get('/forgot-password',array(
@@ -87,21 +87,28 @@ Route::post('/change-password/{username}',array(
   'as'=>'change-password-user',
     'uses'=>'AuthController@post_updatepassword'
   ));
-
+Route::get('/change_password_success',function(){
+  return View::make('auth.change_password_success');
+});
 Route::get('profile/{username}/like',array(
     'as'=>'profile-user-like',
-    'uses'=>'ProfileController@like'
+    'uses'=>'LikeController@like'
   ));
-
+Route::get('profile/{username}/likematch',array(
+  'as'=> 'profile-user-likematch',
+  'uses'=>'LikeController@likematch'
+  ));
 Route::get('profile/{username}/dislike',array(
     'as'=>'profile-user-dislike',
-    'uses'=>'ProfileController@dislike'
+    'uses'=>'LikeController@dislike'
+  ));
+Route::get('/show_all_friends',array(
+    'uses'=>'LikeController@all_friend'
+  ));
+Route::get('/show_all_likes',array(
+    'uses'=>'LikeController@all_like'
   ));
 
-// Route::get('/profile/{username}/virtualitem',array(
-//     'as'=>'profile-user-insertvirtualitem',
-//     'uses'=>'AuthController@virtual'
-//   ));
 
 Route::get('/profile/{username}/chatbox',array(
     'as'=>'profile-user-chatbox',
@@ -115,9 +122,19 @@ Route::get('/recieve-message',array(
     'uses'=>'ChatController@recieve_message'
   ));
 
-// Route::get('/sendvirtualsuccess',function(){
-//   return View::make('sendvirtualsuccess');
-// });
+
+
+Route::get('/profile/{username}/virtualitem',array(
+     'as'=>'profile-user-virtualitem',
+     'uses'=>'VirtualController@virtual'
+   ));
+Route::get('/profile/{username}/sendvirtualsuccess/{virtualid}',array(
+     'as'=>'profile-user-sendvirtualsuccess-virtualid',
+     'uses'=>'VirtualController@sendvirtual'
+   ));
+Route::get('/recieve-virtual',array(
+    'uses'=>'VirtualController@recieve_virtual'
+  ));
 
 
 // Route::get('/profile/{username}/insertvirtualitem',function(){

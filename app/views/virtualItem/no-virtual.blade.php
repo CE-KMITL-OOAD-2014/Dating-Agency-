@@ -1,5 +1,5 @@
 <h2>
-	Don't have message.
+	Don't have virtual item.
 </h2>
 <br><br>
 <a href="/showprofile">
