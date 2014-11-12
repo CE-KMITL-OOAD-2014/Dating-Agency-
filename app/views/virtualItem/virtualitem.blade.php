@@ -34,7 +34,7 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     </////change link & title>
-                        <img src="/virtualpic/2.jpg" HEIGHT=230  WIDTH=230 alt="Flower 1" />
+                        <img src="virtualpic/2.jpg" HEIGHT=230  WIDTH=230 alt="Flower 1" />
                 </div>
                 <div class="panel-footer">
                 </////change link & title>
@@ -50,7 +50,7 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     </////change link & title>
-                        <img src="/virtualpic/3.jpg" HEIGHT=230  WIDTH=230 alt="Flower 2" />
+                        <img src="virtualpic/3.jpg" HEIGHT=230  WIDTH=230 alt="Flower 2" />
                 </div>
                 <div class="panel-footer">
                 </////change link & title>
@@ -99,7 +99,7 @@
                 <div class="panel-body">
                     </////change link & title>
                       
-                        <img src="/virtualpic/6.jpg" HEIGHT=230  WIDTH=230 alt="Send Gift 1" />
+                        <img src="virtualpic/6.jpg" HEIGHT=230  WIDTH=230 alt="Send Gift 1" />
                 </div>
                 <div class="panel-footer">
                 </////change link & title>
@@ -131,7 +131,7 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     </////change link & title>
-                        <img src="/virtualpic/8.jpg" HEIGHT=230  WIDTH=230 alt="Falling in Love 1" />
+                        <img src="virtualpic/8.jpg" HEIGHT=230  WIDTH=230 alt="Falling in Love 1" />
                 </div>
                 <div class="panel-footer">
                 </////change link & title>
@@ -147,7 +147,7 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     </////change link & title>
-                        <img src="/virtualpic/9.jpg" HEIGHT=230  WIDTH=230 alt="Falling in Love 2" />
+                        <img src="virtualpic/9.jpg" HEIGHT=230  WIDTH=230 alt="Falling in Love 2" />
                 </div>
                 <div class="panel-footer">
                 </////change link & title>
@@ -163,7 +163,7 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     </////change link & title>
-                        <img src="/virtualpic/10.jpg"  HEIGHT=230  WIDTH=230 alt="Like" />
+                        <img src="virtualpic/10.jpg"  HEIGHT=230  WIDTH=230 alt="Like" />
                 </div>
                 <div class="panel-footer">
                 </////change link & title>
@@ -181,7 +181,7 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     </////change link & title>
-                        <img src="/virtualpic/11.jpg'" HEIGHT=230  WIDTH=230 alt="Bear" />
+                        <img src="virtualpic/11.jpg'" HEIGHT=230  WIDTH=230 alt="Bear" />
                 </div>
                 <div class="panel-footer">
                 </////change link & title>
@@ -197,7 +197,7 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     </////change link & title>
-                        <img src="/virtualpic/12.jpg'"  HEIGHT=230  WIDTH=230 alt="Ring" />
+                        <img src="virtualpic/12.jpg'"  HEIGHT=230  WIDTH=230 alt="Ring" />
                 </div>
                 <div class="panel-footer">
                 </////change link & title>
