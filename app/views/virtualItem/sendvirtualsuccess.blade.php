@@ -9,7 +9,7 @@
         <h2>{{$sender->username}} send virtual to {{$reciever->username}} success.</h2>
         <BR>    
 
-                                    <img src="{asset('/virtualpic/{{$virtual->virtual}}.jpg')}" HEIGHT=230  WIDTH=230 alt="Bear" />
+                                    <img src="/virtualpic/{{$virtual->virtual}}.jpg" HEIGHT=230  WIDTH=230 alt="Bear" />
 <br><br><br>
                             <div class="col-sm-12 controls">
                             <a href="/profile" >
