@@ -18,7 +18,7 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     </////change link & title>
-                        <img src="/virtualpic/1.jpg"  HEIGHT=230  WIDTH=230 alt="Send Heart" />
+                        <img src="/virtualpic/1.jpg"  HEIGHT=230  WIDTH=230 alt="Ring" />
                 </div>
                 <div class="panel-footer">
                 </////change link & title>
@@ -39,6 +39,7 @@
                 <div class="panel-footer">
                 </////change link & title>
                     <h4>Flower 1</h4>
+
                     <a href="sendvirtualsuccess/2" >
                     <botton class="btn btn-lg btn-info">Select</button>
                     </a>
@@ -98,7 +99,6 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     </////change link & title>
-                      
                         <img src="/virtualpic/6.jpg" HEIGHT=230  WIDTH=230 alt="Send Gift 1" />
                 </div>
                 <div class="panel-footer">

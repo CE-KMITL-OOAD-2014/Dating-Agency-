@@ -47,6 +47,9 @@ Route::get('/showprofile', function(){
   return View::make('profile.showprofile', array('user' => Auth::user()));
 
 });
+Route::get('/',function(){
+  return View::make('home');
+});
 
 Route::post('/showprofile','ProfileController@profile');
 
