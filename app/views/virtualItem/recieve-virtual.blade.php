@@ -42,7 +42,7 @@
                     <tbody>
                       <tr>
                         <td>Message :</td>
-                        <td> <img src="{asset('virtualpic/{{$virtual->virtual}}')}" HEIGHT=230  WIDTH=230 alt="show" /><br></td>
+                        <td> <img src="{asset('/virtualpic/{{$virtual->virtual}}.jpg')}" HEIGHT=230  WIDTH=230 alt="show" /><br></td>
 
                       </tr>
 
