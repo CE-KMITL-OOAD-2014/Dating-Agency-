@@ -181,7 +181,7 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     </////change link & title>
-                        <img src="/virtualpic/11.jpg'" HEIGHT=230  WIDTH=230 alt="Bear" />
+                        <img src="/virtualpic/11.jpg" HEIGHT=230  WIDTH=230 alt="Bear" />
                 </div>
                 <div class="panel-footer">
                 </////change link & title>
@@ -197,7 +197,7 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     </////change link & title>
-                        <img src="/virtualpic/12.jpg'"  HEIGHT=230  WIDTH=230 alt="Ring" />
+                        <img src="/virtualpic/12.jpg"  HEIGHT=230  WIDTH=230 alt="Ring" />
                 </div>
                 <div class="panel-footer">
                 </////change link & title>
