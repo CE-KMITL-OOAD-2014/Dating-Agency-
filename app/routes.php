@@ -36,7 +36,7 @@ Route::get('/logout', function(){
 });
 //buildprofile page
 Route::get('/buildprofile',function(){
-  return View::make('profile.buildprofile') ->(UserStatus::$message);
+  return View::make('profile.buildprofile');
 
 });
 //buildprofile page post data
