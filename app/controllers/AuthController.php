@@ -60,8 +60,8 @@ class AuthController extends BaseController {
 	public function new_user(){
 		//new user
  //var_dump(UserStatus::$rules);
-		//$user = new UserStatus;
-    //if($user->valid(Input::get('username'),Input::get('password'))==1){
+	$validate=UserStatus::validate(Input::all());
+    if($validate->passes()){
 			$user = new UserStatus;
 			$user->setUsername(Input::get('username'));
 			$user->setPassword(Hash::make(Input::get('password')));
@@ -96,14 +96,12 @@ class AuthController extends BaseController {
 			if(Auth::attempt($credentials)){
 				return Redirect::to('/showguideline');
    			}  	
-   	/*	
-
 }
 else{
 	//echo(UserStatus::$message["name"]);
 	return Redirect::to('/buildprofile')
-	->with(UserStatus::$message);
-}*/
+	->withErrors($validate->messages());
+}
  
  
 

@@ -52,7 +52,7 @@ class ChatController extends BaseController {
 				$message->setSender(Auth::user()->username);
 				$message->setReceiver($user_receive->username);
 				$message->saveMessage();
- 				$message_status = $chat->hasMessage();
+ 				$message_status = $chat->getMessageAll();
  				return View::make('chat.chat', array('chats'=> $message_status,'user_send' => Auth::user()))
 				->with(array("user_receive"=>$user_receive->username));
     		}	
@@ -61,7 +61,7 @@ class ChatController extends BaseController {
     			$chatbox = new Chat;
 				$chatbox->setSender(Auth::user()->username);
 				$chatbox->setReceiver($user_receive->username);
-    		 	$message_status = $chatbox->hasMessage();
+    		 	$message_status = $chatbox->getMessageAll();
  				return View::make('chat.chat', array('chats'=> $message_status,'user_send' => Auth::user()))
 				->with(array("user_receive"=>$user_receive->username));
 			}
