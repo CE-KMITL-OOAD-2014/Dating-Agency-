@@ -23,6 +23,7 @@ class Database extends Migration {
 		});
 		Schema::create('profiles', function($table){
 			$table->increments('id');
+			$table->integer('user_id')->unsigned();
 			$table->string('firstname', 30)->unique()->nullable(false);
 			$table->string('lastname', 30)->unique()->nullable(false);
 			$table->string('age', 20)->nullable(false);
@@ -38,6 +39,7 @@ class Database extends Migration {
 
 		Schema::create('profilePictures', function($table){
 			$table->increments('id');
+			$table->integer('profile_id')->unsigned();
 			$table->string('profilepicture',100);
 			$table->timestamps();
 		});
