@@ -4,7 +4,7 @@ class LikeTest extends TestCase {
 
     public function testlike()
     {
-        $user1 = new like;
+        $user1=new like;
         $user1->setUser_sendlike("user1");
         $user1->toLike("user2");
         $like = LikeRepository::find(DB::table('likes')->max('id'));
