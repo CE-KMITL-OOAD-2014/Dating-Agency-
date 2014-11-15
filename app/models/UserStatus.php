@@ -90,4 +90,19 @@ class UserStatus{
 		$obj->save();
 	}
 
+	//validation
+	public static function validate($input){
+		$rules=array(
+			'username'=>'Required|Between:3,20',
+			'password' =>'Required|Between:4,8|Confirmed',
+			'password_confirmation'=>'Required|Between:4,8'
+			);
+		$message = array(
+			'username.required'=>'please insert username.',
+			'password.min'=>'password must be 4-8 character',
+			'confirmed'=>'confirm password unsuccess'
+			);
+		return Validator::make($input,$rules,$message);
+	}
+
 }

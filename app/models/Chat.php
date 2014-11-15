@@ -75,8 +75,18 @@
 	   
 	    // get all message
 		public function getMessageAll(){
-			$obj=MessageRepository::all();
-			return $obj;	
+			$message= new message;
+			$state=$message->hasMessage();
+			if($state==1){
+				$obj=MessageRepository::all();
+				return $obj;
+			}
+			else return NULL;
+			/*$obj=MessageRepository::all();
+			if($obj==NULL){
+				return NULL;
+			}
+			return $obj;*/	
         }
 
         //after read message -> set up database

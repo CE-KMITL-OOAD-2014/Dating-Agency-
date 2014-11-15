@@ -96,4 +96,11 @@
         	}
         }
 
+        //have message or not??
+        public function hasMessage(){
+			$obj=MessageRepository::find(1);
+			if($obj==NULL) return 0;
+			else return 1;
+        }
+
 	}
