@@ -58,35 +58,57 @@ class AuthController extends BaseController {
 	}
 
 	public function new_user(){
-		//new user 
-		$user = new UserStatus;
-		$user->setUsername(Input::get('username'));
-		$user->setPassword(Hash::make(Input::get('password')));
-		$user->saveUser();
+		//new user
+ //var_dump(UserStatus::$rules);
+		//$user = new UserStatus;
+    //if($user->valid(Input::get('username'),Input::get('password'))==1){
+			$user = new UserStatus;
+			$user->setUsername(Input::get('username'));
+			$user->setPassword(Hash::make(Input::get('password')));
+			$user->saveUser();
 
-		$profile = new Profile;
-		$profile->setFirstname(Input::get('firstname'));
-		$profile->setLastname(Input::get('lastname'));
-		$profile->setAge(Input::get('age'));
-		$profile->setGender(Input::get('gender'));
-		$profile->setWork(Input::get('work'));
-		$profile->setInterest(Input::get('interest'));
-		$profile->setTel(Input::get('tel'));
-		$profile->setEmail(Input::get('email'));
-		$profile->setFacebook(Input::get('facebook'));
-		$profile->setLineID(Input::get('lineid'));
-	    $profile->saveProfile();
+			$userid=$user->getByUsername(Input::get('username'));
 
-	    $profilepicture_name = Str::random(20).'.jpg';
-	   	$profilepicture = new ProfilePicture; 
-	    $profilepicture->setProfilePicture($profilepicture_name);
-	    $profilepicture->saveProfilePicture();
-	    
+			$profile = new Profile;
+			$profile->setUser_ID($userid->getID());
+			$profile->setFirstname(Input::get('firstname'));
+			$profile->setLastname(Input::get('lastname'));
+			$profile->setAge(Input::get('age'));
+			$profile->setGender(Input::get('gender'));
+			$profile->setWork(Input::get('work'));
+			$profile->setInterest(Input::get('interest'));
+			$profile->setTel(Input::get('tel'));
+			$profile->setEmail(Input::get('email'));
+			$profile->setFacebook(Input::get('facebook'));
+			$profile->setLineID(Input::get('lineid'));
+			$profile->saveProfile();
+
+			$profileid=$profile->getByUser_ID($profile->getUser_ID());
+
+			$profilepicture_name = Str::random(20).'.jpg';
+			$profilepicture = new ProfilePicture; 
+			$profilepicture->setProfile_ID($profileid->getID());
+			$profilepicture->setProfilePicture($profilepicture_name);
+			$profilepicture->saveProfilePicture();
+
 	  	//sign in
-        $credentials = Input::only('username', 'password');
-        if(Auth::attempt($credentials)){
-        	return Redirect::to('/showguideline');
-   		}  	
+			$credentials = Input::only('username', 'password');
+			if(Auth::attempt($credentials)){
+				return Redirect::to('/showguideline');
+   			}  	
+   	/*	
+
+}
+else{
+	//echo(UserStatus::$message["name"]);
+	return Redirect::to('/buildprofile')
+	->with(UserStatus::$message);
+}*/
+ 
+ 
+
+
+
     }
 }
 ?>

@@ -36,7 +36,8 @@ Route::get('/logout', function(){
 });
 //buildprofile page
 Route::get('/buildprofile',function(){
-  return View::make('profile.buildprofile');
+  return View::make('profile.buildprofile') ->with(UserStatus::$message);
+
 });
 //buildprofile page post data
 Route::post('/buildprofile','AuthController@new_user');
@@ -141,4 +142,6 @@ Route::get('/receive-virtual',array(
 Route::get('/showguideline',function(){
   return View::make('profile.showguideline');
 });
+
+
  ?>

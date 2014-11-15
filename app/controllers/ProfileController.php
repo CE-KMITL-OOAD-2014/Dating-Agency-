@@ -47,10 +47,10 @@ class ProfileController extends BaseController {
         $user=Auth::user();
         //get user's profile 
         $profile=new Profile;
-        $profile_user = $profile->getByID($user->id);
+        $profile_user = $profile->getByUser_ID($user->id);
         //get user's profile picture
         $profilepicture=new ProfilePicture;
-        $profilepicture_user = $profilepicture->getByID($user->id);
+        $profilepicture_user = $profilepicture->getByProfile_ID($profile_user->getID());
         return View::make('profile.showprofile')
             ->with(array("username"=>$user->username,
                 "firstname"=>$profile_user->getFirstname(),
