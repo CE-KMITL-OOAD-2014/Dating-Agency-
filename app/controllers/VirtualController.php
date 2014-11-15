@@ -1,34 +1,47 @@
 <?php
+
+//control all about send/receive virtual item
 class VirtualController extends BaseController {
+
+	//send virtual item view
 	public function virtual($username){
 		return View::make('virtualItem.virtualitem');
 	}
 
-	public function sendvirtual($username,$virtualid){
-		 $user_recieve = User::where('username','=',$username);
-		if($user_recieve->count()){
-			$user_recieve=$user_recieve->first();
-    			$virtual = new Virtual();
-    			$virtual->sender=Auth::user()->username;
-    			$virtual->reciever=$user_recieve->username;
-    			$virtual->virtual = $virtualid;
-    			$virtual->read=0;
- 				$virtual->save();
-	    
-    			 return View::make('virtualItem.sendvirtualsuccess', array('virtual'=> $virtual,'sender' => Auth::user()))
-						->with('reciever',$user_recieve);
-    		
+	//send virtual item
+	public function sendvirtual($username,$virtualnumber){
+		//update database
+		$user_receive = User::where('username','=',$username);
+		if($user_receive->count()){
+			$user_receive=$user_receive->first();
+    		$virtual = new VirtualItem;
+    		$virtual->setSender(Auth::user()->username);
+    		$virtual->setReceiver($user_receive->username);
+    		$virtual->setVirtualnumber($virtualnumber);  //virtual item id that user selected
+ 			$virtual->sendVirtualItem();
+    		return View::make('virtualItem.sendvirtualsuccess')
+    		->with(array("sender"=>Auth::user()->username,
+                "receiver"=>$user_receive->username,
+                "virtualnumber"=>$virtualnumber
+                ));
 		}
 		return App::abort(404);
 	}
 
-	public function recieve_virtual(){
-	 	$reciever = Auth::user();
-	 	$virtual=Virtual::where('reciever','=',$reciever->username);
-    	if($virtual->count()){
-    		//Chat::where('read','=','1')->delete();
-    		Virtual::where('reciever','=',$reciever->username)->where('read','=','0')->update(array('read'=>1));
-    		return View::make('virtualItem.recieve-virtual', array('virtuals' => Virtual::All(),'user'=>$reciever));
+	//show virtual item that user receive
+	public function receive_virtual(){
+	 	$receiver = Auth::user();
+	 	$virtual = new VirtualItem;
+	 //	$allvirtual = $virtual->getAll();
+	 	$allvirtual = $virtual->hasReceiveVirtual(Auth::user()->username);
+	 	//$virtual=Virtual::where('receiver','=',$receiver->username);
+    	if($allvirtual!=NULL){
+    		//update database to read
+    		//read=1 mean user read
+    		$virtual->receiveVirtualItem(Auth::user()->username);
+    		//Virtual::where('receiver','=',$receiver->username)->where('read','=','0')->update(array('read'=>1));
+    		return View::make('virtualItem.receive-virtual')->with('virtuals',$allvirtual)
+    		->with(array("username"=>Auth::user()->username));
     	}
     	return View::make('virtualItem.no-virtual');
 	}
