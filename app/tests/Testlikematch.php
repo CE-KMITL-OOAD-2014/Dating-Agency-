@@ -1,25 +1,36 @@
-<?php 
+<?php
 
-class Testlikematch extends TestCase { 
-
-    public function likematching()
+class LikematchTest extends TestCase {
+public function testLikematch()
     {
-        $userlikesend = new likepresssend(array('bow','nan','boss'));
-        $this->assertTrue($userlikesend->tolike('bow')); 
-        $this->assertTrue($userlikesend->tolike('nan')); 
-        $this->assertTrue($userlikesend->tolike('boss')); 
-    
-        $userlikerecieve = new likepressrecieve(array('bow','sun','bank'));
-        $this->assertTrue($userlikesend->tolike('bow')); 
-        $this->assertTrue($userlikesend->tolike('sun')); 
-        $this->assertTrue($userlikesned->tolike('bank')); 
+        $user3=new like;
+        $user3->setUser_sendlike("user3");
+        $user3->setID((DB::table('likes')->max('id'))+1);
+        $user3->toLike("user4");
+        $like = LikeRepository::find(DB::table('likes')->max('id'));
+        $this->assertEquals('user3',$like->user_sendlike);
+        $this->assertEquals('user4',$like->user_receivelike);
+        $this->assertEquals('0',$like->likematchstate);
 
+        $user4=new like;
+        $user4->setUser_sendlike("user4");
+        $user4->setID((DB::table('likes')->max('id'))+1);
+        $user4->toLike("user3");
+        $like = LikeRepository::find(DB::table('likes')->max('id'));
+        $this->assertEquals('user4',$like->user_sendlike);
+        $this->assertEquals('user3',$like->user_receivelike);
+        $this->assertEquals('0',$like->likematchstate);
+
+        $user3->Likematch();
+        $user4->Likematch();
+
+        $like = LikeRepository::find((DB::table('likes')->max('id'))-1);
+        $this->assertEquals('user3',$like->user_sendlike);
+        $this->assertEquals('user4',$like->user_receivelike);
+        $this->assertEquals('1',$like->likematchstate);
+        $like = LikeRepository::find(DB::table('likes')->max('id'));
+        $this->assertEquals('user4',$like->user_sendlike);
+        $this->assertEquals('user3',$like->user_receivelike);
+        $this->assertEquals('1',$like->likematchstate);
     }
-
-
-    public function matchinglikestatus()
-    {
-        $this->assertEquals($userlikesend,$userreceive);
-    }
-
 }
