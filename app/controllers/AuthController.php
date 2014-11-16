@@ -19,15 +19,21 @@ class AuthController extends BaseController {
 
 	//identified user
 	public function post_forgotPassword(){
-	 	$user = User::where('username','=',Input::get('username'))
-	 	->where('firstname','=',Input::get('firstname'))
-	 	->where('lastname','=',Input::get('lastname'))
-	 	->where('email','=',Input::get('email'));
+	 	$user = User::where('username','=',Input::get('username'));
 	 	if($user->count()){
 	 		$user=$user->first();
-
-	 		return View::make('auth.change-password')
-				->with('user',$user);
+	 		$user_profile=new Profile;
+	 		$profile = $user_profile->getByUser_ID($user->id);
+	 		$firstname = $profile->getFirstname();
+	 		$lastname = $profile->getLastname();
+	 		$email = $profile->getEmail();
+	 		if($firstname==Input::get('firstname')&& 
+	 			$lastname==Input::get('lastname')&&
+	 			$email==Input::get('email')
+	 			){
+	 			return View::make('auth.change-password')
+					->with('user',$user);
+			}
 
 	 	}
     	return Redirect::to('forgot-password');
@@ -58,10 +64,9 @@ class AuthController extends BaseController {
 	}
 
 	public function new_user(){
-		//new user
- //var_dump(UserStatus::$rules);
-	$validate=UserStatus::validate(Input::all());
-    if($validate->passes()){
+	//new user
+		$validate=User::validate(Input::all());
+		if($validate->passes()){
 			$user = new UserStatus;
 			$user->setUsername(Input::get('username'));
 			$user->setPassword(Hash::make(Input::get('password')));
@@ -95,19 +100,14 @@ class AuthController extends BaseController {
 			$credentials = Input::only('username', 'password');
 			if(Auth::attempt($credentials)){
 				return Redirect::to('/showguideline');
-   			}  	
-}
-else{
-	//echo(UserStatus::$message["name"]);
-	return Redirect::to('/buildprofile')
-	->withErrors($validate->messages());
-}
- 
- 
-
-
-
-    }
+			}  	
+		}
+		else{
+			return Redirect::to('/buildprofile')
+			->withErrors($validate->messages());
+		}
+	}
+	
 }
 ?>
 		

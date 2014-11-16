@@ -96,11 +96,17 @@
         	}
         }
 
-        //have message or not??
-        public function hasMessage(){
-			$obj=MessageRepository::find(1);
-			if($obj==NULL) return 0;
-			else return 1;
+        //have message to user or not??
+        public function hasMessage($username){
+        	$obj=MessageRepository::all();
+			$size=count($obj);
+			for($i=0;$i<$size;$i++){  
+				if($obj[$i]->receiver == $username) {
+					return 1;
+				}    
+
+        	}
+				return 0;  
         }
 
 	}

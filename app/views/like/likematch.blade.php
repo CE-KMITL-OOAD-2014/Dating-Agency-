@@ -14,14 +14,14 @@
 
 <!-- show profile and contact information-->
 
-<div id="profilebox" style="margin-top:50px" >
+<div id="profilebox" >
   <div class="container">
     <div class="row">
       <center>
         <h1><u>{{$username}} Profile</u></h1>
       </center>
       <br>
-      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+      <div class="col-xs-15 col-sm-15 col-md-10 col-lg-10 col-xs-offset-0 col-sm-offset-0 col-md-offset-2 col-lg-offset-2 toppad" >
         <div class="panel panel-info">
           <div class="panel-heading">
             <h3 class="panel-title">{{$username }}</h3>

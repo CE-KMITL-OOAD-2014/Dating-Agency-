@@ -3,18 +3,14 @@
 @section('content')
 
 <center>
-  	<h2>Show all User</h2>
-  	<br>
+  	<h2>" Show all User " </h2>
+  	<br><br>
  	@foreach($users as $user)
  		<a href ="profile/{{$user->username}}">
- 			{{$user->username}}
- 			<br>
+ 			<h3>{{$user->username}}</h3>
 		</a> 
   @endforeach
 </center>
-<br><br>
-<a href ="showprofile">
- 	Back To Your Profile
-</a>
+
  
 @stop

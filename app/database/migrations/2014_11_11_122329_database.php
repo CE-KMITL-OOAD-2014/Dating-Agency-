@@ -25,15 +25,15 @@ class Database extends Migration {
 			$table->increments('id');
 			$table->integer('user_id')->unsigned();
 			$table->string('firstname', 30)->unique()->nullable(false);
-			$table->string('lastname', 30)->unique()->nullable(false);
+			$table->string('lastname', 30)->nullable(false);
 			$table->string('age', 20)->nullable(false);
 			$table->string('gender', 20)->nullable(false);
 			$table->string('work', 30)->nullable(false);
 			$table->string('interest', 30)->nullable(false);
-			$table->string('tel', 30)->unique()->nullable(false); 
-			$table->string('email', 25)->unique()->nullable(false);
-			$table->string('facebook', 60)->unique()->nullable(false);
-			$table->string('lineid', 30)->unique()->nullable(false); 
+			$table->string('tel', 30)->nullable(false); 
+			$table->string('email', 25)->nullable(false);
+			$table->string('facebook', 60)->nullable(false);
+			$table->string('lineid', 30)->nullable(false); 
 			$table->timestamps();
 		});
 

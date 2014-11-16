@@ -1,7 +1,7 @@
 @extends('layout')
 @section('content')
 
-<div id="likebox" style=" margin-top:50px;" >                    
+<div id="likebox"  >                    
   <center>
     <h2>Like Selection</h2>
     <a href="/profile/{{$username}}/like" onClick="$('#likebox').hide()">
@@ -13,7 +13,7 @@
     <div class="container">
       <div class="row">
       <br><br>
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+        <div class="col-xs-15 col-sm-15 col-md-10 col-lg-10 col-xs-offset-0 col-sm-offset-0 col-md-offset-2 col-lg-offset-2 toppad" >
           <div class="panel panel-info">
             <div class="panel-heading">
               <h3 class="panel-title"> {{$username}} </h3>

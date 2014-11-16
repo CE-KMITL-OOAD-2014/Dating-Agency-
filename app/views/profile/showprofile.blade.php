@@ -1,14 +1,13 @@
 @extends('layout')
+
 @section('content')
 
-<div id="profilebox" style="margin-top:50px" >
-  <div class="container">
-    <div class="row">
+<div id="profilebox" >
       <center>
         <h1><u>Your Profile</u></h1>
       </center>
       <br>
-      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+      <div class="col-xs-15 col-sm-15 col-md-10 col-lg-10 col-xs-offset-0 col-sm-offset-0 col-md-offset-2 col-lg-offset-2 toppad" >
         <div class="panel panel-info">
           <div class="panel-heading">
             <h3 class="panel-title">{{$username }}</h3>
@@ -73,8 +72,6 @@
             <span class="pull-right">                                  
               <form action = "logout" method = "get">
                 <div class="col-sm-12 controls">
-                  <a type="button"  href="/show_all_friends" class="btn btn-primary">Show all friends</a>
-                  <a type="button"  href="/show_all_likes" class="btn btn-primary">Show all likes</a>
                   <a type="button"  href="/editprofile/{{$username}}" class="btn btn-primary">Edit Profile</a>
                   <button id="btn-logout" type="submit" class="btn btn-primary">Logout</button>
                 </div>
@@ -83,20 +80,7 @@
             <br><br>
           </div>
         </div>
-        <span class="pull-right">
-            <a href="/profile" >
-              <button id="btn-showotherprofile" type="submit" class="btn btn-success">Show Other Profile</button>
-            </a>
-            <a href="/receive-message" >
-              <button id="btn-showotherprofile" type="submit" class="btn btn-success">Show Receive Message</button>
-            </a>
-            <a href="/receive-virtual" >
-              <button id="btn-showotherprofile" type="submit" class="btn btn-success">Show Receive Virtual Items</button>
-            </a>        
-        </span>
       </div>
-    </div>
-  </div>
 </div>
 
 

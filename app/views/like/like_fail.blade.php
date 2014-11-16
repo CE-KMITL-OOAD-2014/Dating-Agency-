@@ -1,3 +1,7 @@
+@extends('layout')
+
+@section('content')
+
 <center>
     <h2>Like Unsuccess</h2>
     <br>
@@ -11,3 +15,5 @@
         <button id="btn-ok" type="submit" class="btn btn-primary">OK</button>
     </a>
 </div>
+
+@stop

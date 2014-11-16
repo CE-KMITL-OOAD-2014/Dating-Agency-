@@ -37,7 +37,6 @@ Route::get('/logout', function(){
 //buildprofile page
 Route::get('/buildprofile',function(){
   return View::make('profile.buildprofile');
-
 });
 //buildprofile page post data
 Route::post('/buildprofile','AuthController@new_user');
@@ -79,7 +78,7 @@ Route::post('/change-password/{username}',array(
   ));
 //Show all user in system
 Route::get('/profile',array(
-    'as'=>'profile-Auth::user()',
+    'as'=>'profile-Auth::user',
     'uses'=>'LikeController@show_all_users'
   ));
 //show other user's profile that selected
