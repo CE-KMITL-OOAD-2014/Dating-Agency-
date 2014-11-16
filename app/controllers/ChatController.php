@@ -77,7 +77,7 @@ class ChatController extends BaseController {
 		//$chatbox->setSender($receiver->username);
 		$chatbox->setReceiver(Auth::user()->username);
     	//$chat=$chatbox->getChatbox();
-    	$message = $chatbox->getMessageAll();
+    	$message = $chatbox->getMessageByUsername(Auth::user()->username);
     	//when don't have message to receive
     	if($message==NULL){
     		return View::make('chat.no-message');
