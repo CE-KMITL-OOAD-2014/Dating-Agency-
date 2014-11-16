@@ -9,10 +9,10 @@ class LikeController extends BaseController {
 		if($user->count()){
 			$user=$user->first();
 			$profile=new Profile;
-        	$profile_user = $profile->getByID($user->id);
+        	$profile_user = $profile->getByUser_ID($user->id);
         	//get user's profile picture
         	$profilepicture=new ProfilePicture;
-        	$profilepicture_user = $profilepicture->getByID($user->id);
+        	$profilepicture_user = $profilepicture->getByProfile_ID($profile_user->getID());
 			return View::make('like.user')
 				->with(array("username"=>$user->username,
                 "firstname"=>$profile_user->getFirstname(),
@@ -55,10 +55,10 @@ class LikeController extends BaseController {
 				if($likestate->getLikematchstate()==1){
         			//get user's profile 
 					$profile=new Profile;
-					$profile_user = $profile->getByID($user_like_id);
+					$profile_user = $profile->getByUser_ID($user_like_id);
         			//get user's profile picture
 					$profilepicture=new ProfilePicture;
-					$profilepicture_user = $profilepicture->getByID($user_like_id);
+					$profilepicture_user = $profilepicture->getByProfile_ID($profile_user->getID());
 					return View::make('like.likematch', array('user' => Auth::user()))
 						->with(array("username"=>$user_like_username,
                		 		"firstname"=>$profile_user->getFirstname(),
@@ -92,10 +92,10 @@ class LikeController extends BaseController {
 					$new->like();	
 					//get user's profile 
 					$profile=new Profile;
-					$profile_user = $profile->getByID($user_like_id);
+					$profile_user = $profile->getByUser_ID($user_like_id);
         			//get user's profile picture
 					$profilepicture=new ProfilePicture;
-					$profilepicture_user = $profilepicture->getByID($user_like_id);
+					$profilepicture_user = $profilepicture->getByProfile_ID($profile_user->getID());
 					return View::make('like.likematch', array('user' => Auth::user()))
 						->with(array("username"=>$user_like_username,
                		 		"firstname"=>$profile_user->getFirstname(),
@@ -138,13 +138,9 @@ class LikeController extends BaseController {
 			//check like match already -> can't dislike
 			$likestate = new like;
 			$dislike = $likestate->isLike($auth_user,$user_dislike_username);
-			//$dislike = LikeRepository::where('user1','=',$auth_user);
 			if($dislike!=NULL){
-				//$dislike = Like::where('user2','=',$user_dislike_username);
-				//$dislike=$dislike->first();
 				if($dislike->getLikematchstate()==0){
 					$dislike->dislike();
-					//LikeRepository::where('user1','=',$auth_user)->where('user2','=',$user_dislike_username)->delete();
 					return View::make('like.dislike', array('user' => Auth::user()))
 						->with(array("user_dislike"=>$user_dislike_username));
 				}
@@ -162,16 +158,20 @@ class LikeController extends BaseController {
     public function all_friend(){
     	$like = new Like;
 		$allLike = $like->getAll();
-    	return View::make('like.allfriend', array('user' => Auth::user()))
+		if($allLike!=NULL){
+    		return View::make('like.allfriend', array('user' => Auth::user()))
 			->with('likes',$allLike);
+		}
 	}
 
 	 //show all user that user like but don't like together
 	public function all_like(){
 		$like = new Like;
 		$allLike = $like->getAll();
-		return View::make('like.alllike', array('user' => Auth::user()))
-		->with('likes',$allLike);
+		if($allLike!=NULL){
+			return View::make('like.alllike', array('user' => Auth::user()))
+			->with('likes',$allLike);
+		}
 	}
 
     //when like match -> show profile and contract information
@@ -180,11 +180,11 @@ class LikeController extends BaseController {
 		if($user_like->count()){
 			$user_like=$user_like->first();
 			$profile=new Profile;
-			$profile_user = $profile->getByID($user_like->id);
-			$user_like_username=$user_like->username;
+			$profile_user = $profile->getByUser_ID($user_like->id);
         	//get user's profile picture
+        	$user_like_username=$user_like->username;
 			$profilepicture=new ProfilePicture;
-			$profilepicture_user = $profilepicture->getByID($user_like->id);
+			$profilepicture_user = $profilepicture->getByProfile_ID($profile_user->getID());
 			return View::make('like.likematch', array('user' => Auth::user()))
 			->with(array("username"=>$user_like_username,
 				"firstname"=>$profile_user->getFirstname(),

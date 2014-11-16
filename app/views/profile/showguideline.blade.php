@@ -1,9 +1,10 @@
 @extends('layout')
 @section('content')
 <!--------- Guideline Page 1 -------------------->
-<div id="page1" style=" margin-top:50px" >
+<div class="col-md-10">
+<div id="page1" >
     <center>
-    <img alt="Guideline Pic" src="/guideline/guideline1.jpg">
+    <img alt="Guideline Pic" src="/guideline/guideline1.jpg" width="1000" height="500">
     <br><br>
         <span class="pull-right">
             <div class="col-md-12 control">
@@ -16,9 +17,9 @@
 </div>
 
 <!--------- Guideline Page 2 -------------------->
-<div id="page2" style="display:none; margin-top:50px" >
+<div id="page2" style="display:none;" >
     <center>
-    <img alt="Guideline Pic" src="/guideline/guideline2.jpg">
+    <img alt="Guideline Pic" src="/guideline/guideline2.jpg" width="1000" height="500">
     <br><br>
         <span class="pull-right">
             <div class="col-md-12 control">
@@ -31,9 +32,9 @@
 </div>
 
 <!--------- Guideline Page 3 -------------------->
-<div id="page3" style="display:none; margin-top:50px" >
+<div id="page3" style="display:none; " >
     <center>
-    <img alt="Guideline Pic" src="/guideline/guideline3.jpg">
+    <img alt="Guideline Pic" src="/guideline/guideline3.jpg" width="1000" height="500">
     <br><br>
         <span class="pull-right">
             <div class="col-md-12 control">
@@ -46,17 +47,18 @@
 </div>
 
 <!--------- Guideline Page 4 -------------------->
-<div id="page4" style="display:none; margin-top:50px" >
+<div id="page4" style="display:none;" >
     <center>
-    <img alt="Guideline Pic" src="/guideline/guideline4.jpg">
+    <img alt="Guideline Pic" src="/guideline/guideline4.jpg" width="1000" height="500">
     <br><br>
        <span class="pull-right">
             <div class="col-md-12 control">
             	<a href="/showprofile">
-            		<botton class="btn btn-lg btn-info"> NEXT </button>
+            		<botton class="btn btn-lg btn-info"> Show Profile </button>
         		</a>
         	</div>
         </span>
     </div>
 </center>
+</div>
 @stop

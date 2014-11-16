@@ -1,9 +1,8 @@
 @extends('layout')
+
 @section('content')
 
-<div id="profilebox" style="margin-top:50px" >
-  <div class="container">
-    <div class="row">
+<div id="profilebox" >
       <center>
         <h1><u>Your Profile</u></h1>
       </center>
@@ -95,8 +94,6 @@
             </a>        
         </span>
       </div>
-    </div>
-  </div>
 </div>
 
 

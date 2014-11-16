@@ -75,23 +75,24 @@
 	   
 	    // get all message
 		public function getMessageAll(){
+			$obj=MessageRepository::all();
+			return $obj;	
+        }
+
+        // get all message
+		public function getMessageByUsername($username){
 			$message= new Message;
-			$state=$message->hasMessage();
+			$state=$message->hasMessage($username);
 			if($state==1){
 				$obj=MessageRepository::all();
 				return $obj;
 			}
-			else return NULL;
-			/*$obj=MessageRepository::all();
-			if($obj==NULL){
-				return NULL;
-			}
-			return $obj;*/	
+			else return NULL;	
         }
 
         //after read message -> set up database
 		public function toRead(){
-			$message=new message;
+			$message=new Message;
 			$message->setReceiver($this->receiver);
 			$message->toRead();
 		}
