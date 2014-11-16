@@ -58,8 +58,9 @@ class AuthController extends BaseController {
 	}
 
 	public function new_user(){
-	//new user
-	$validate=User::validate(Input::all());
+		//new user
+ //var_dump(UserStatus::$rules);
+	$validate=UserStatus::validate(Input::all());
     if($validate->passes()){
 			$user = new UserStatus;
 			$user->setUsername(Input::get('username'));
