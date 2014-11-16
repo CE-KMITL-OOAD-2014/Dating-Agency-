@@ -5,7 +5,7 @@ class ChatController extends BaseController {
 		$user_receive = User::where('username','=',$username);
 		if($user_receive->count()){
 			$user_receive=$user_receive->first();
-			$chatbox=new chat;
+			$chatbox=new Chat;
 			$chatbox->setSender(Auth::user()->username);
 			$chatbox->setReceiver($user_receive->username);
 			$chat=$chatbox->getChatbox();
