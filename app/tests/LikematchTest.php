@@ -3,7 +3,7 @@
 class LikematchTest extends TestCase {
 public function testLikematch()
     {
-        $user3=new like;
+        $user3=new Like;
         $user3->setUser_sendlike("user3");
         $user3->setID((DB::table('likes')->max('id'))+1);
         $user3->toLike("user4");
@@ -12,7 +12,7 @@ public function testLikematch()
         $this->assertEquals('user4',$like->user_receivelike);
         $this->assertEquals('0',$like->likematchstate);
 
-        $user4=new like;
+        $user4=new Like;
         $user4->setUser_sendlike("user4");
         $user4->setID((DB::table('likes')->max('id'))+1);
         $user4->toLike("user3");
