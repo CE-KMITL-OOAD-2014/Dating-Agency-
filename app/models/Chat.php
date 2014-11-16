@@ -75,7 +75,7 @@
 	   
 	    // get all message
 		public function getMessageAll(){
-			$message= new message;
+			$message= new Message;
 			$state=$message->hasMessage();
 			if($state==1){
 				$obj=MessageRepository::all();

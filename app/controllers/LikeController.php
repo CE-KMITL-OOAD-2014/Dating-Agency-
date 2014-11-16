@@ -181,6 +181,7 @@ class LikeController extends BaseController {
 			$user_like=$user_like->first();
 			$profile=new Profile;
 			$profile_user = $profile->getByID($user_like->id);
+			$user_like_username=$user_like->username;
         	//get user's profile picture
 			$profilepicture=new ProfilePicture;
 			$profilepicture_user = $profilepicture->getByID($user_like->id);
