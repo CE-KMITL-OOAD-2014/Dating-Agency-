@@ -18,7 +18,7 @@ class ProfileController extends BaseController {
     public function update(){
     	$id = Input::get('id');
         $user = new Profile;
-        $profile = $user->getByID($id);
+        $profile = $user->getByUser_ID($id);
     	if(Input::get('firstname')!=null)  $profile->setFirstname(Input::get('firstname'));
     	if (Input::get('lastname')!=null)  $profile->setLastname(Input::get('lastname'));
     	if (Input::get('age')!=null)  $profile->setAge(Input::get('age'));
@@ -32,7 +32,7 @@ class ProfileController extends BaseController {
         $profile->editProfile();
         if (Input::file('profilepicture')!=null) { 
             $user = new ProfilePicture;
-            $profilepicture = $user->getByID($id);
+            $profilepicture = $user->getByProfile_ID($profile_gatID());
             //random name of picture
             $profilepicture_name = Str::random(20).'.jpg';
             $profilepicture->setProfilePicture($profilepicture_name);

@@ -95,7 +95,18 @@ class UserStatus{
 		$rules=array(
 			'username'=>'Required|Between:3,20',
 			'password' =>'Required|Between:4,8|Confirmed',
-			'password_confirmation'=>'Required|Between:4,8'
+			'password_confirmation'=>'Required|Between:4,8',
+			'firstname'=>'Required|Between:3,30',
+			'lastname'=>'Required|Between:3,30',
+			'age'=>'Required|Alpha_num',
+			'gender'=>'Required',
+			'work'=>'Required',
+			'interest'=>'Required|Between:3,60',
+			'tel'=>'Required',
+			'email'=>'Required|Email',
+			'facebook'=>'Required',
+			'lineid'=>'Required',
+			'profilepicture'=>'Required'
 			);
 		$message = array(
 			'username.required'=>'please insert username.',
